@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div class="container">
-		<div class="frame frame-ani" frame-type="diamond" frame-view="bg">
+		<div class="frame" frame-type="diamond" frame-view="all">
 			<div class="num num-0">
 				<div class="line line-0-1"></div>
 			</div>
@@ -236,11 +236,13 @@
 
 	<script>
 		let cur = 'all';
+		let type = 3;
 		let frame = document.querySelector('[frame-view]');
 		let status = frame.getAttribute('frame-view');
 
-		function setNum(num) {
+		function setFrame(num, type) {
 			frame.setAttribute('frame-view', num);
+			frame.setAttribute('frame-type', ['diamond', 'club', 'heart', 'spade'][type]);
 		}
 		function change() {
 			setInterval(() => {
@@ -248,6 +250,7 @@
 					case 13:
 					case 'all':
 						cur = 'bg';
+						type = (type + 1) % 4;
 						break;
 					case 'bg':
 						cur = 0;
@@ -256,7 +259,7 @@
 						cur = (cur + 1) % 14;
 				}
 
-				setNum(cur);
+				setFrame(cur, type);
 			}, 800);
 		}
 

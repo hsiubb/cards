@@ -480,33 +480,29 @@ body {
 
 
 /* 8 */
-[class*="line-8-"] {
-	background: linear-gradient(-60deg, transparent, #049, #fff, #049, transparent);
-}
 .line-8-1 {
-	background: linear-gradient(135deg, transparent, #049, #fff 48px, #049, #fff);
-	transform: translate(-6%, -25%) rotate(-135deg) scale(.5);
+	z-index: 3;
+	background: linear-gradient(90deg, #fff 15px, transparent 15px, #049, #fff, #049, #fff);
+	transform: translate(-9.5%, -22.5%) rotate(-135deg) scale(.54);
 }
 .line-8-2 {
 	bottom: 0;
-	/*background: linear-gradient(-15deg, #fff 90px, transparent 90px, #049, transparent, #049, #fff);*/
-	/*background: linear-gradient(85deg, transparent, #049, #fff 90px, #049, transparent);*/
-	background: linear-gradient(90deg, #fff 6px, transparent 6px, #049, #fff, #049, transparent);
+	background: linear-gradient(135deg, transparent, #049, #fff 48px, #049, #fff);
 	transform: translate(0, 12%) rotate(45deg) scale(.75);
 }
 [class*="line-8-"]::before {
 	/*display: none;*/
 }
 [class*="line-8-"]::before {
-	width: 318px;
+	width: 309px;
 	height: 318px;
-	top: 9px;
-	left: 9px;
+	top: 6px;
+	left: 24px;
 }
 .line-8-2::before {
 	width: 312px;
 	height: 312px;
-	top: 18px;
+	top: 15px;
 	left: 12px;
 }
 
