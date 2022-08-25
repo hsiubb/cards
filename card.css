@@ -40,9 +40,10 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	min-width: 816px;
 	width: 816px;
 	height: 1110px;
+	min-width: 816px;
+	min-height: 1110px;
 	margin: auto;
 	background-size: 100% auto;
 	background-color: #013;
