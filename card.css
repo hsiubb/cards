@@ -945,7 +945,7 @@ body {
 	color: gold;
 }
 
-/*
+
 @keyframes scales {
 	0% {max-width: 0%;}
 	80% {max-width: 100%;}
@@ -980,7 +980,7 @@ body {
 .frame-ani::after {
 	animation-name: split-after;
 }
-*/
+
 
 
 
