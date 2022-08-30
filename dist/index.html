@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>card - bg</title>
 	<link rel="stylesheet" href="/card.2f3a3ab9.css">
 <script src="/card.2f3a3ab9.js"></script></head>
 <body>
 	<div class="container">
-		<div class="frame" frame-type="diamond" frame-view="7">
+		<div class="frame" frame-type="diamond" frame-view="9">
 			<div class="num num-0">
 				<div class="line line-0-1"></div>
 			</div>
@@ -228,17 +229,20 @@
 
 			<!-- <h1 class="title">Cabo</h1> -->
 
-			<div class="skill"></div>
+			<div class="skill cabo-skill"></div>
+			<div class="skill loveletter-skill"></div>
 		</div>
 
 	</div>
 
 	<script>var cur = 'all';
+var type = 3;
 var frame = document.querySelector('[frame-view]');
 var status = frame.getAttribute('frame-view');
 
-function setNum(num) {
+function setFrame(num, type) {
   frame.setAttribute('frame-view', num);
+  frame.setAttribute('frame-type', ['diamond', 'club', 'heart', 'spade'][type]);
 }
 
 function change() {
@@ -247,6 +251,7 @@ function change() {
       case 13:
       case 'all':
         cur = 'bg';
+        type = (type + 1) % 4;
         break;
 
       case 'bg':
@@ -257,7 +262,7 @@ function change() {
         cur = (cur + 1) % 14;
     }
 
-    setNum(cur);
+    setFrame(cur, type);
   }, 800);
 }
 

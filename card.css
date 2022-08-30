@@ -752,10 +752,10 @@ body {
 .skill {
 	position: absolute;
 	z-index: 2;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
+	top: 50px;
+	bottom: 50px;
+	left: 50px;
+	right: 50px;
 	font-size: 48px;
 	line-height: 1;
 	text-align: right;
@@ -768,118 +768,74 @@ body {
 	left: 0;
 	right: 0;
 }
-.skill::before {
-	top: 0;
-}
-/*.skill::after {
-	display: none;
-	bottom: 0;
-	transform: rotate(180deg);
-}*/
 .skill::after {
-	bottom: 0;
+	font-size: 30px;
 	text-align: left;
-	font-size: 36px;
-	color: rgba(255, 255, 255, .1);
+	color: rgba(255, 255, 255, .2);
 }
 
-[frame-view="7"] .skill::before,
-[frame-view="8"] .skill::before,
-[frame-view="7"] .skill::after,
-[frame-view="8"] .skill::after {
+.cabo-skill::before { top: 0; }
+.cabo-skill::after { bottom: 0; }
+[frame-view="7"] .cabo-skill::before,
+[frame-view="8"] .cabo-skill::before,
+[frame-view="7"] .cabo-skill::after,
+[frame-view="8"] .cabo-skill::after {
 	content: 'PEEK';
 }
 
-[frame-view="9"] .skill::before,
-[frame-view="10"] .skill::before,
-[frame-view="9"] .skill::after,
-[frame-view="10"] .skill::after {
+[frame-view="9"] .cabo-skill::before,
+[frame-view="10"] .cabo-skill::before,
+[frame-view="9"] .cabo-skill::after,
+[frame-view="10"] .cabo-skill::after {
 	content: 'SPY';
 }
 
-[frame-view="11"] .skill::before,
-[frame-view="12"] .skill::before,
-[frame-view="11"] .skill::after,
-[frame-view="12"] .skill::after {
+[frame-view="11"] .cabo-skill::before,
+[frame-view="12"] .cabo-skill::before,
+[frame-view="11"] .cabo-skill::after,
+[frame-view="12"] .cabo-skill::after {
 	content: 'SWAP';
 }
 
-[frame-view="7"] .skill::after,
-[frame-view="8"] .skill::after {
-	content: '查看自己一张牌';
+[frame-view="7"] .cabo-skill::after,
+[frame-view="8"] .cabo-skill::after {
+	content: 'CABO：查看自己一张牌';
 }
-[frame-view="9"] .skill::after,
-[frame-view="10"] .skill::after {
-	content: '查看对手一张牌';
+[frame-view="9"] .cabo-skill::after,
+[frame-view="10"] .cabo-skill::after {
+	content: 'CABO：查看对手一张牌';
 }
-[frame-view="11"] .skill::after,
-[frame-view="12"] .skill::after {
-	content: '与对手交换一张牌';
-}
-/*
-.skill {
-	position: absolute;
-	z-index: 2;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	font-size: 24px;
-	text-align: center;
-	color: rgba(255, 255, 255, .1);
-	pointer-events: none;
-}
-.skill::before {
-	top: 0;
-
-	display: block;
-	font-size: 48px;
-	line-height: 1;
-	text-align: right;
-}
-.skill::after {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	text-align: left;
-}
-[frame-view="7"] .skill::before,
-[frame-view="8"] .skill::before {
-	content: 'PEEK';
-}
-[frame-view="7"] .skill::after,
-[frame-view="8"] .skill::after {
-	content: '查看自己一张牌';
+[frame-view="11"] .cabo-skill::after,
+[frame-view="12"] .cabo-skill::after {
+	content: 'CABO：与对手交换一张牌';
 }
 
-[frame-view="9"] .skill::before,
-[frame-view="10"] .skill::before {
-	content: 'SPY';
-}
-[frame-view="9"] .skill::after,
-[frame-view="10"] .skill::after {
-	content: '查看对手一张牌';
-}
 
-[frame-view="11"] .skill::before,
-[frame-view="12"] .skill::before {
-	content: 'SWAP';
+.loveletter-skill::before {
+	top: 1.5em;
 }
-[frame-view="11"] .skill::after,
-[frame-view="12"] .skill::after {
-	content: '与对手交换一张牌';
-}*/
+.loveletter-skill::after {
+	bottom: 1.5em;
+	text-indent: .9em;
+}
+[frame-view="9"][frame-type='diamond'] .loveletter-skill::before {
+	content: '公主';
+}
+[frame-view="9"][frame-type='diamond'] .loveletter-skill::after {
+	content: '情书：玩家若弃掉公主，则出局';
+}
 
 
 .num {z-index: 2;}
-/*.num-0, .num-3, .num-6, .num-8, .num-9 {z-index: 1;}*/
-/*.num-5, .num-6, .num-9 {z-index: 1;}*/
-.num-0, .num-2, .num-3, .num-5, .num-6, .num-8, .num-9 {z-index: 1;}
-/*.bg .line {opacity: .5;}*/
-/*.bg .line::before {opacity: .9;}*/
-
-
+.bg .num-0,
+.bg .num-2,
+.bg .num-3,
+.bg .num-5,
+.bg .num-6,
+.bg .num-8,
+.bg .num-9 {
+	z-index: 1;
+}
 
 [frame-view="0"] .num-0,
 [frame-view="1"] .num-1,
@@ -939,42 +895,6 @@ body {
 }
 .cabo span {
 	color: gold;
-}
-
-
-@keyframes scales {
-	0% {max-width: 0%;}
-	80% {max-width: 100%;}
-	100% {max-width: 100%;}
-}
-@keyframes split-before {
-	0% { background: linear-gradient(to bottom, transparent, #049, #fff 95%, transparent); }
-	60% { background: linear-gradient(to bottom, transparent, #049, #fff 95%, transparent); }
-	64% { background: linear-gradient(to bottom, transparent, #049, #fff 85%, transparent 90%, #fff 95%, transparent); }
-	67% { background: linear-gradient(to bottom, transparent, #049, #fff 75%, transparent 80%, #fff 85%, transparent 90%, #fff 95%, transparent); }
-	69%, 100% { background: linear-gradient(to bottom, transparent, #049, #fff 65%, transparent 70%, #fff 75%, transparent 80%, #fff 85%, transparent 90%, #fff 95%, transparent); }
-}
-@keyframes split-after {
-	0% { background: linear-gradient(to top, transparent, #049, #fff 95%, transparent); }
-	60% { background: linear-gradient(to top, transparent, #049, #fff 95%, transparent); }
-	64% { background: linear-gradient(to top, transparent, #049, #fff 85%, transparent 90%, #fff 95%, transparent); }
-	67% { background: linear-gradient(to top, transparent, #049, #fff 75%, transparent 80%, #fff 85%, transparent 90%, #fff 95%, transparent); }
-	69%, 100% { background: linear-gradient(to top, transparent, #049, #fff 65%, transparent 70%, #fff 75%, transparent 80%, #fff 85%, transparent 90%, #fff 95%, transparent); }
-}
-
-.frame-ani,
-.frame-ani::before,
-.frame-ani::after {
-	animation: 3s ease-in-out infinite;
-}
-.frame-ani {
-	animation-name: scales;
-}
-.frame-ani::before {
-	animation-name: split-before;
-}
-.frame-ani::after {
-	animation-name: split-after;
 }
 
 

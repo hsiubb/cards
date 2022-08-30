@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CABO</title>
+	<style>
+		* {box-sizing: border-box;padding: 0;margin: 0;}
+		.container {
+			display: flex;
+			justify-content: center;
+			align-items: stretch;
+			width: 1024px;
+			padding: 0 15px;
+			margin: auto;
+			font-family: Helvetica;
+			font-size: 20px;
+			line-height: 28px;
+			font-weight: 100;
+			color: #fff;
+			text-align: justify;
+			/*background: linear-gradient(to bottom, #1c3f72, #35528d, #5168aa);*/
+			background: url(./bg.png);
+			background-size: auto 100%;
+			background-position: top left;
+		}
+		.side {
+			flex: 1;
+			padding: 40px 15px;
+		}
+		img {
+			display: block;
+		}
+		.logo {
+			width: 100%;
+			margin-bottom: 36px;
+		}
+		.board {
+			width: 72%;
+			margin: 12px auto;
+		}
+		.line-title {
+			display: block;
+			margin-bottom: 6px;
+			margin-top: 11px;
+			font-size: 28px;
+			color: #0f2c69;
+			line-height: 48px;
+			font-weight: 400;
+			text-align: center;
+			background: #fff;
+		}
+		.line-large {
+			font-size: 28px;
+			line-height: 50px;
+			font-weight: 400;
+			text-align: center;
+		}
+		.last-row {
+			/*white-space: nowrap;
+			letter-spacing: -1px;*/
+		}
+		.period {
+		}
+		strong {
+			font-weight: 500;
+		}
+		p {
+			margin-top: 4px;
+		}
+		dl {
+			position: relative;
+			padding-left: 135px;
+			margin-top: 10px;
+		}
+		dt {
+			float: left;
+			margin-left: -135px;
+			width: 135px;
+			text-align: right;
+			font-weight: 400;
+		}
+		dd {
+			text-indent: 0;
+			margin-bottom: 5px;
+		}
+	</style>
+</head>
+<body>
+	<main class="container">
+		<side class="side">
+				<h1><img src="./logo.png" alt="" class="logo"></h1>
+				<p>尽可能地接近 CABO —— 那头神秘的独角兽，卡牌上的数字代表你跟它之间的距离。游戏结束时，最接近 CABO 的人获得游戏的胜利。</p>
+				<h2 class="line-title">游戏设置</h2>
+				<p>洗牌，在每位玩家面前发四张牌，面朝下排成一行。将剩余的牌堆放在桌子中间，然后把最顶上的牌翻开放在旁边，作为弃牌堆。</p>
+				<img src="./board.png" alt="" class="board">
+				<p>秘密查看自己的 2 张牌然后记住，玩家不能改变牌的位置。</p>
+				<p>随机选择一位起始玩家。</p>
+				<h2 class="line-title">游戏过程</h2>
+				<p>从起始玩家开始，顺时针执行回合。在你的回合，你可以从牌堆或弃牌堆抓一张牌，或者喊 CABO。</p>
+				<p class="line-large">从牌堆抓牌</p>
+				<p>如果你从牌堆顶上抓牌，查看该牌，然后选择一个行动：</p>
+				<p><strong>1）将牌放入弃牌堆。 </strong>如果该牌带有特殊能力，可以选择执行</p>
+				<p style="text-align: center;">或者</p>
+				<p><strong>2）与你的 一张或多张牌 交换。</strong>将被换掉的牌正面朝上放入弃牌堆。然后将新牌面朝 下 放在自己面前被弃掉的牌同一位置上。</p>
+				<p>查看规则书 “交换多张牌” 部分来了解如何 交换多张相同的牌。</p>
+				<p class="line-large">从弃牌堆抓牌</p>
+				<p>如果你从弃牌堆顶抓牌：<strong>与你的 一张或多张牌 交换。</strong>将被换掉的牌正面朝上放入弃牌堆。然后将新牌面朝 上 放在自己面前被弃掉的牌同一位置上。</p>
+				<p class="line-large">喊 CABO</p>
+				<p>如果你喊 CABO，则你的回合结束，每位其他玩家在执行一个回合，本轮结束。</p>
+
+				<p style="margin-top: 62px;font-size: .75em;">翻译：雪松 &emsp; <span style="float: right;opacity: .1;">描改：楚滨</span></p>
+		</side>
+		<side class="side">
+				<h2 class="line-title" style="margin-top: 0">交换多张卡牌</h2>
+				<p>一次性交换多张卡牌时，选中的所有牌必须为相同数字。</p>
+				<p>将这些牌向前推，然后全部翻至正面，将新抓到的牌放在其中一张牌的位置上。</p>
+				<p>如果这些牌不是相同数字，将他们放回原位置，然后将新抓到的牌放在自己面前的最右侧。</p>
+				<p>如果你尝试交换三张或以上的牌失败，还需要额外从牌堆抓一张牌，不查看牌面，面朝下放在自己面前。</p>
+				<h2 class="line-title">卡牌特殊能力</h2>
+				<p>如果你从牌堆抽到一张带有能力的牌，你可以将它放在弃牌堆来触发它的能力。</p>
+				<dl>
+					<dt>7-8 PEEK：</dt>
+					<dd>秘密查看一张你自己的牌。</dd>
+					<dt>9-10 SPY：</dt>
+					<dd>秘密查看一张其他玩家的牌。</dd>
+					<dt>11-12 SWAP：</dt>
+					<dd>将你的一张牌和一位其他玩家的牌交换，不改变其正反面。</dd>
+				</dl>
+				<h2 class="line-title">自杀</h2>
+				<p>如果一个玩家结束游戏时，拿到了两张 13 和两张 12，并且没有其他的牌，则他获得 0 分，且其他所有玩家获得 50 分。该玩家可以喊 CABO。</p>
+				<h2 class="line-title">轮次结束</h2>
+				<p>当 1）有一位玩家喊 CABO 且其他玩家都在那之后执行过一次。2）牌堆抽空 时，一轮结束。</p>
+				<p>如果游戏没有结束，将牌洗混之后再进行一轮。上一轮得分最低的玩家成为新的起始玩家。如果出现平<span class="last-row">手，最靠近上一位起始玩家的玩家成为新的起始玩家。</span></p>
+				<h2 class="line-title">记分</h2>
+				<p>你的本轮得分为本轮结束时你面前的牌的数字总和。</p>
+				<p>但是，如果是由你宣告 CABO 并且你的数字总和最低（或者最低但与他人平手），你记 0 分；如果是由你宣告 CABO 但你的数字总和不是最低，记你面前的牌的数字总和的分数，并额外加 10 分。</p>
+				<p class="last-row">记录所有玩家本轮的分数，并且与之前轮的分数加总。</p>
+				<h2 class="line-title">游戏结束</h2>
+				<p>游戏会在有一位玩家分数超过 100 时结束。此时分数最低的玩家获胜。如果出现平手，最后一轮得分更低的玩家获胜。</p>
+				<h2 class="line-title">分数重置</h2>
+				<p>若一轮结束后，一位玩家的总分恰好为 100 分，将他<span class="last-row">的分数重置到 50 分。每位玩家每局游戏只能重置一次。</span></p>
+		</side>
+	</main>
+</body>
+</html>
