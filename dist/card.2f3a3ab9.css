@@ -756,10 +756,10 @@ body {
 	bottom: 50px;
 	left: 50px;
 	right: 50px;
-	font-size: 48px;
+	font-size: 40px;
 	line-height: 1;
 	text-align: right;
-	color: rgba(255, 255, 255, .3);
+	color: rgba(255, 255, 255, .4);
 	pointer-events: none;
 }
 .skill::before,
@@ -770,6 +770,7 @@ body {
 }
 .skill::after {
 	font-size: 30px;
+	line-height: 1.5;
 	text-align: left;
 	color: rgba(255, 255, 255, .2);
 }
@@ -799,31 +800,103 @@ body {
 
 [frame-view="7"] .cabo-skill::after,
 [frame-view="8"] .cabo-skill::after {
-	content: 'CABO：查看自己一张牌';
+	content: '🦄️ 查看自己一张牌';
 }
 [frame-view="9"] .cabo-skill::after,
 [frame-view="10"] .cabo-skill::after {
-	content: 'CABO：查看对手一张牌';
+	content: '🦄️ 查看对手一张牌';
 }
 [frame-view="11"] .cabo-skill::after,
 [frame-view="12"] .cabo-skill::after {
-	content: 'CABO：与对手交换一张牌';
+	content: '🦄️ 与对手交换一张牌';
 }
 
 
 .loveletter-skill::before {
-	top: 1.5em;
+	top: 0;
 }
 .loveletter-skill::after {
+	bottom: 0;
+}
+
+[frame-view="11"] .loveletter-skill::before,
+[frame-view="9"] .loveletter-skill::before,
+[frame-view="8"] .loveletter-skill::before,
+[frame-view="7"] .loveletter-skill::before {
+	top: 1.5em;
+}
+[frame-view="11"] .loveletter-skill::after,
+[frame-view="9"] .loveletter-skill::after,
+[frame-view="8"] .loveletter-skill::after,
+[frame-view="7"] .loveletter-skill::after {
 	bottom: 1.5em;
-	text-indent: .9em;
 }
-[frame-view="9"][frame-type='diamond'] .loveletter-skill::before {
-	content: '公主';
-}
+[frame-view="9"][frame-type='diamond'] .loveletter-skill::before { content: '公主'; }
+[frame-view="8"][frame-type='diamond'] .loveletter-skill::before { content: '女伯爵'; }
+[frame-view="7"][frame-type='diamond'] .loveletter-skill::before { content: '国王'; }
+[frame-view="6"][frame-type='diamond'] .loveletter-skill::before,
+[frame-view="6"][frame-type='club'] .loveletter-skill::before { content: '大臣'; }
+[frame-view="5"][frame-type='diamond'] .loveletter-skill::before,
+[frame-view="4"][frame-type='club'] .loveletter-skill::before { content: '王子'; }
+[frame-view="4"][frame-type='diamond'] .loveletter-skill::before,
+[frame-view="4"][frame-type='club'] .loveletter-skill::before { content: '侍女'; }
+[frame-view="3"][frame-type='diamond'] .loveletter-skill::before,
+[frame-view="3"][frame-type='club'] .loveletter-skill::before { content: '男爵'; }
+[frame-view="2"][frame-type='diamond'] .loveletter-skill::before,
+[frame-view="2"][frame-type='club'] .loveletter-skill::before { content: '祭司'; }
+[frame-view="11"][frame-type='diamond'] .loveletter-skill::before,
+[frame-view="1"] .loveletter-skill::before { content: '守卫'; }
+[frame-view="0"][frame-type='diamond'] .loveletter-skill::before { content: '间谍'; }
+
 [frame-view="9"][frame-type='diamond'] .loveletter-skill::after {
-	content: '情书：玩家若弃掉公主，则出局';
+	content: '💌 玩家若弃掉公主，则出局';
 }
+[frame-view="8"][frame-type='diamond'] .loveletter-skill::after {
+	content: '💌 如果手牌有王子或国王，则必须打出女 \b\b\b\b伯爵';
+}
+[frame-view="7"][frame-type='diamond'] .loveletter-skill::after {
+	content: '💌 选择一位玩家与其交换手牌';
+}
+[frame-view="6"][frame-type='diamond'] .loveletter-skill::after,
+[frame-view="6"][frame-type='club'] .loveletter-skill::after {
+	content: '💌 抓去牌堆顶两张牌，然后从手牌中选择 \b\b\b\b\b两张牌放到牌堆底部';
+}
+[frame-view="5"][frame-type='diamond'] .loveletter-skill::after,
+[frame-view="5"][frame-type='club'] .loveletter-skill::after {
+	content: '💌 选择一位玩家让其弃掉手牌';
+}
+[frame-view="4"][frame-type='diamond'] .loveletter-skill::after,
+[frame-view="4"][frame-type='club'] .loveletter-skill::after {
+	content: '💌 一回合内不受技能效果影响';
+}
+[frame-view="3"][frame-type='diamond'] .loveletter-skill::after,
+[frame-view="3"][frame-type='club'] .loveletter-skill::after {
+	content: '💌 与任一位玩家的手牌比大小，数字小的 \b\b\b\b\b玩家出局';
+}
+[frame-view="2"][frame-type='diamond'] .loveletter-skill::after,
+[frame-view="2"][frame-type='club'] .loveletter-skill::after {
+	content: '💌 秘密查看一位玩家的手牌';
+
+}
+[frame-view="11"][frame-type='diamond'] .loveletter-skill::after,
+[frame-view="1"] .loveletter-skill::after {
+	content: '💌 猜任一位玩家的手牌，如果猜中则出局， \b\b\b\b\b不能猜守卫';
+	letter-spacing: -1px;
+}
+[frame-view="0"][frame-type='diamond'] .loveletter-skill::after,
+[frame-view="0"][frame-type='club'] .loveletter-skill::after {
+	content: '💌 本轮结束时，若你存活，并且只有你打 \b\b\b\b\b出或弃掉间谍，你额外获得一分';
+}
+/*
+侍卫 1 5 出牌时猜任一位玩家的手牌，如果猜中则出局，其中不能猜测对方为侍卫
+牧师 2 2 出牌时可以查看任一位玩家的手牌
+男爵 3 2 出牌时与任一位玩家的手牌比大小，数字小的玩家出局，平手则没事
+女仆 4 2 出牌后此玩家一回合内受到保护，其他玩家无法对他使用技能
+王子 5 2 出牌时可以指定任一位玩家(包括自己)，(面朝上)弃掉手牌并抽一张；如果弃的牌是公主，则该玩家出局
+国王 6 1 出牌时可以与任一位玩家交换手牌
+伯爵夫人 7 1 如果手牌同时有这张和王子或国王，则必须打出伯爵夫人
+公主 8 1 玩家若弃掉公主，则出局
+*/
 
 
 .num {z-index: 2;}
