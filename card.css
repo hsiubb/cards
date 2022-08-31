@@ -48,7 +48,7 @@ body {
 	overflow: hidden;
 }
 .container::before {
-	/*content: '';*/
+	content: '';
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -65,68 +65,7 @@ body {
 	overflow: hidden;
 }
 
-/*default*/
-/*
-.frame::before,
-.frame::after {
-	content: '';
-	position: absolute;
-	border-radius: 30px 0;
-	width: 336px;
-	height: 483px;
-	border: 6px solid;
-}
-.frame::before {
-	top: 0;
-	left: 0;
-	border-color: #fff transparent transparent #fff;
-}
-.frame::after {
-	bottom: 0;
-	right: 0;
-	border-color: transparent #fff #fff transparent;
-}
-.line {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 6px;
-	height: 1380px;
-	transform: translate(-50%, -50%) rotate(36.25deg);
-	background: #fff;
-}*/
 
-
-
-/*
-.frame::before,
-.frame::after {
-	content: '';
-	position: absolute;
-	border-radius: 30px 0;
-	width: 336px;
-	height: 483px;
-}
-.frame::before {
-	top: 0;
-	left: 0;
-	background: linear-gradient(-53.75deg, #049, #049, #fff);
-}
-.frame::after {
-	bottom: 0;
-	right: 0;
-	background: linear-gradient(126.25deg, #049, #049, #fff);
-}
-.line {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 6px;
-	height: 1380px;
-	transform: translate(-50%, -50%) rotate(36.25deg);
-	background: #fff;
-}
-*/
 .frame::before,
 .frame::after {
 	content: '';
@@ -134,51 +73,40 @@ body {
 	width: 6px;
 	height: 483px;
 	border-radius: 3px;
-	/*background: linear-gradient(to bottom, #049, #fff, #049);*/
 }
 .frame::before {
 	top: 0;
 	left: 0;
-	/*background: linear-gradient(to bottom, transparent, #049, #fff 98%, transparent);*/
 	background: linear-gradient(to bottom, transparent, #049, #fff 95%, transparent);
 }
 .frame::after {
 	bottom: 0;
 	right: 0;
-	/*background: linear-gradient(to bottom, transparent, #fff 2%, #049, transparent);*/
 	background: linear-gradient(to top, transparent, #049, #fff 95%, transparent);
 }
 [frame-type='diamond']::before {
 	background: linear-gradient(to bottom, transparent, #049, #fff 95%, transparent);
-	/*background: linear-gradient(to bottom, transparent, #049, #fff 85%, transparent 90%, #fff 95%, transparent);*/
 }
 [frame-type='club']::before {
 	background: linear-gradient(to bottom, transparent, #049, #fff 85%, transparent 90%, #fff 95%, transparent);
-	/*background: linear-gradient(to bottom, transparent, #049, #fff 75%, transparent 80%, #fff 85%, transparent 90%, #fff 95%, transparent);*/
 }
 [frame-type='heart']::before {
 	background: linear-gradient(to bottom, transparent, #049, #fff 75%, transparent 80%, #fff 85%, transparent 90%, #fff 95%, transparent);
-	/*background: linear-gradient(to bottom, transparent, #049, #fff 65%, transparent 70%, #fff 75%, transparent 80%, #fff 85%, transparent 90%, #fff 95%, transparent);*/
 }
 [frame-type='spade']::before {
 	background: linear-gradient(to bottom, transparent, #049, #fff 65%, transparent 70%, #fff 75%, transparent 80%, #fff 85%, transparent 90%, #fff 95%, transparent);
-	/*background: linear-gradient(to bottom, transparent, #049, #fff 55%, transparent 60%, #fff 65%, transparent 70%, #fff 75%, transparent 80%, #fff 85%, transparent 90%, #fff 95%, transparent);*/
 }
 [frame-type='diamond']::after {
 	background: linear-gradient(to top, transparent, #049, #fff 95%, transparent);
-	/*background: linear-gradient(to top, transparent, #049, #fff 85%, transparent 90%, #fff 95%, transparent);*/
 }
 [frame-type='club']::after {
 	background: linear-gradient(to top, transparent, #049, #fff 85%, transparent 90%, #fff 95%, transparent);
-	/*background: linear-gradient(to top, transparent, #049, #fff 75%, transparent 80%, #fff 85%, transparent 90%, #fff 95%, transparent);*/
 }
 [frame-type='heart']::after {
 	background: linear-gradient(to top, transparent, #049, #fff 75%, transparent 80%, #fff 85%, transparent 90%, #fff 95%, transparent);
-	/*background: linear-gradient(to top, transparent, #049, #fff 65%, transparent 70%, #fff 75%, transparent 80%, #fff 85%, transparent 90%, #fff 95%, transparent);*/
 }
 [frame-type='spade']::after {
 	background: linear-gradient(to top, transparent, #049, #fff 65%, transparent 70%, #fff 75%, transparent 80%, #fff 85%, transparent 90%, #fff 95%, transparent);
-	/*background: linear-gradient(to top, transparent, #049, #fff 55%, transparent 60%, #fff 65%, transparent 70%, #fff 75%, transparent 80%, #fff 85%, transparent 90%, #fff 95%, transparent);*/
 }
 
 .line {
@@ -424,37 +352,7 @@ body {
 	transform: skew(-30deg, 0);
 	background: linear-gradient(to top, transparent, #fff, #049, transparent, #049, #fff);
 }
-/*	top: 0;
-	left: 25%;
-	height: 70%;
 
-	transform: skew(-30deg, 0);
-	background: linear-gradient(to bottom, transparent, #049, #fff);
-}
-.line-6-2 {
-	top: 70%;
-	left: 22.5%;
-	height: 30%;
-
-	transform: skew(51deg, 0);
-	background: linear-gradient(to top, #fff, #049, transparent, #049, #fff);
-}
-.line-6-3 {
-	top: 70%;
-	right: 22.5%;
-	height: 30%;
-
-	transform: skew(-51deg, 0);
-	background: linear-gradient(to top, #fff, #049, transparent, #049, #fff);
-}
-.line-6-4 {
-	bottom: 30%;
-	right: 22.5%;
-	height: 30%;
-
-	transform: skew(51deg, 0);
-	background: linear-gradient(to top, #fff, #049, transparent);
-}*/
 
 .line-base {
 	bottom: -20%;
@@ -491,9 +389,6 @@ body {
 	transform: translate(0, 12%) rotate(45deg) scale(.75);
 }
 [class*="line-8-"]::before {
-	/*display: none;*/
-}
-[class*="line-8-"]::before {
 	width: 309px;
 	height: 318px;
 	top: 6px;
@@ -514,8 +409,6 @@ body {
 	right: 0;
 	width: var(--halfW);
 	height: var(--halfW);
-
-	/*transform: skew(-30deg, 0);*/
 	background: linear-gradient(60deg, #049, #fff, #049, transparent, #049, #fff, #049);
 	border-radius: 50%;
 }
@@ -538,23 +431,7 @@ body {
 	transform: skew(-30deg, 0);
 	background: linear-gradient(to bottom, transparent, #fff, #049, transparent, #049, #fff);
 }
-/*.line-9-3 {
-	bottom: 70%;
-	left: 22.5%;
-	height: 30%;
 
-	transform: skew(-51deg, 0);
-	background: linear-gradient(to bottom, #fff, #049, transparent, #049, #fff);
-}
-.line-9-4 {
-	top: 30%;
-	left: 22.5%;
-	height: 30%;
-
-	transform: skew(51deg, 0);
-	background: linear-gradient(to bottom, #fff, #049, transparent);
-}
-*/
 
 
 .line-10-1,
@@ -649,14 +526,9 @@ body {
 }
 .line-12-5 {
 	width: 10px;
-/*	left: 60%;
-	bottom: 0;
-	height: 40%;
-	transform: skew(-56deg, 0);*/
 	left: 66.3%;
 	bottom: 0;
 	height: 40%;
-	/*transform: skew(-56deg, 0);*/
 	transform: skew(-51deg, 0);
 	background: linear-gradient(to top, transparent, #049, #fff);
 }
@@ -698,68 +570,19 @@ body {
 	width: 60%;
 	height: 85%;
 }
-/*.line-13-4 {
-	top: 10%;
-	left: 12.5%;
-	width: 50%;
-	height: 6px;
-	transform: skew(0, -30deg);
-	background: linear-gradient(to left, #fff, #049, transparent);
-}
-.line-13-5 {
-	top: 10%;
-	left: 62.5%;
-	width: 50%;
-	height: 6px;
-	transform: skew(0, 30deg);
-	background: linear-gradient(to right, #fff, #049, transparent);
-}*/
-
-
-/*.line-13-6 {
-	right: 5%;
-	top: 20%;
-	height: 30%;
-	transform: skew(-41.25deg, 0);
-	background: linear-gradient(to bottom, transparent, #049, #fff);
-}
-.line-13-7 {
-	right: 5%;
-	bottom: 20%;
-	height: 30%;
-	transform: skew(41.25deg, 0);
-	background: linear-gradient(to bottom, #fff, #049, transparent);
-}
-.line-13-8 {
-	bottom: 10%;
-	left: 62.5%;
-	width: 50%;
-	height: 6px;
-	transform: skew(0, -30deg);
-	background: linear-gradient(to right, #fff, #049, transparent);
-}
-.line-13-9 {
-	bottom: 10%;
-	left: 12.5%;
-	width: 50%;
-	height: 6px;
-	transform: skew(0, 30deg);
-	background: linear-gradient(to left, #fff, #049, transparent);
-}*/
-
 
 
 .skill {
 	position: absolute;
 	z-index: 2;
-	top: 50px;
-	bottom: 50px;
-	left: 50px;
-	right: 50px;
+	top: 20px;
+	bottom: 20px;
+	left: 20px;
+	right: 20px;
 	font-size: 40px;
 	line-height: 1;
 	text-align: right;
-	color: rgba(255, 255, 255, .4);
+	color: rgba(255, 255, 255, .5);
 	pointer-events: none;
 }
 .skill::before,
@@ -769,14 +592,14 @@ body {
 	right: 0;
 }
 .skill::after {
-	font-size: 30px;
+	font-size: 24px;
 	line-height: 1.5;
 	text-align: left;
-	color: rgba(255, 255, 255, .2);
+	color: rgba(255, 255, 255, .3);
 }
 
 .cabo-skill::before { top: 0; }
-.cabo-skill::after { bottom: 0; }
+.cabo-skill::after { bottom: 1.5em; }
 [frame-view="7"] .cabo-skill::before,
 [frame-view="8"] .cabo-skill::before,
 [frame-view="7"] .cabo-skill::after,
@@ -825,12 +648,7 @@ body {
 [frame-view="7"] .loveletter-skill::before {
 	top: 1.5em;
 }
-[frame-view="11"] .loveletter-skill::after,
-[frame-view="9"] .loveletter-skill::after,
-[frame-view="8"] .loveletter-skill::after,
-[frame-view="7"] .loveletter-skill::after {
-	bottom: 1.5em;
-}
+
 [frame-view="9"][frame-type='diamond'] .loveletter-skill::before { content: '公主'; }
 [frame-view="8"][frame-type='diamond'] .loveletter-skill::before { content: '女伯爵'; }
 [frame-view="7"][frame-type='diamond'] .loveletter-skill::before { content: '国王'; }
@@ -852,14 +670,14 @@ body {
 	content: '💌 玩家若弃掉公主，则出局';
 }
 [frame-view="8"][frame-type='diamond'] .loveletter-skill::after {
-	content: '💌 如果手牌有王子或国王，则必须打出女 \b\b\b\b伯爵';
+	content: '💌 如果手牌有王子或国王，则必须打出女伯爵';
 }
 [frame-view="7"][frame-type='diamond'] .loveletter-skill::after {
 	content: '💌 选择一位玩家与其交换手牌';
 }
 [frame-view="6"][frame-type='diamond'] .loveletter-skill::after,
 [frame-view="6"][frame-type='club'] .loveletter-skill::after {
-	content: '💌 抓去牌堆顶两张牌，然后从手牌中选择 \b\b\b\b\b两张牌放到牌堆底部';
+	content: '💌 从牌堆摸两张牌，然后从手牌中选择两张牌放回牌堆底';
 }
 [frame-view="5"][frame-type='diamond'] .loveletter-skill::after,
 [frame-view="5"][frame-type='club'] .loveletter-skill::after {
@@ -871,21 +689,20 @@ body {
 }
 [frame-view="3"][frame-type='diamond'] .loveletter-skill::after,
 [frame-view="3"][frame-type='club'] .loveletter-skill::after {
-	content: '💌 与任一位玩家的手牌比大小，数字小的 \b\b\b\b\b玩家出局';
+	content: '💌 与任一位玩家的手牌比大小，数字小的玩家出局';
 }
 [frame-view="2"][frame-type='diamond'] .loveletter-skill::after,
 [frame-view="2"][frame-type='club'] .loveletter-skill::after {
 	content: '💌 秘密查看一位玩家的手牌';
-
 }
 [frame-view="11"][frame-type='diamond'] .loveletter-skill::after,
 [frame-view="1"] .loveletter-skill::after {
-	content: '💌 猜任一位玩家的手牌，如果猜中则出局， \b\b\b\b\b不能猜守卫';
+	content: '💌 猜任一位玩家的手牌，如果猜中则对方出局，不能猜守卫';
 	letter-spacing: -1px;
 }
 [frame-view="0"][frame-type='diamond'] .loveletter-skill::after,
 [frame-view="0"][frame-type='club'] .loveletter-skill::after {
-	content: '💌 本轮结束时，若你存活，并且只有你打 \b\b\b\b\b出或弃掉间谍，你额外获得一分';
+	content: '💌 若本轮你存活且只有你打出或弃掉间谍，额外获得一分';
 }
 /*
 侍卫 1 5 出牌时猜任一位玩家的手牌，如果猜中则出局，其中不能猜测对方为侍卫
@@ -896,6 +713,25 @@ body {
 国王 6 1 出牌时可以与任一位玩家交换手牌
 伯爵夫人 7 1 如果手牌同时有这张和王子或国王，则必须打出伯爵夫人
 公主 8 1 玩家若弃掉公主，则出局
+*/
+
+.silver-skill::after {
+}
+/*
+00 villager		村民		持续：如果两张 0 同时展示在场上，本轮立即结束
+01 squire		侍从		持续：每个侍从展示 1 张牌堆顶的牌
+02 empath		通灵		持续：在你的回合，查看你的一张牌
+03 bodyguard	保镖		持续：保护此牌和自己的另一张的牌
+04 rascal		无赖		持续：抽牌时，每个无赖让你额外抽一张牌
+05 exposer		曝光者	将你的 1 张牌翻至正面
+06 revealer		启示者	将任意 1 张牌翻至正面
+07 beholder		旁观者	查看自己至多 2 张牌
+08 seer			预言学徒	查看其他玩家的 1 张牌
+09 seer			预言师	查看任意 1 张牌
+10 master		大师		从弃牌堆拿一张牌
+11 witch		女巫		查看牌堆顶的一张牌，然后与任意玩家的一张牌交换
+12 robber		强盗		偷取一位对手的牌，然后将你的一张牌给回去，查看你新拿到的牌
+13 doppelganger	二重身	交换牌时可视作其他牌
 */
 
 
@@ -934,7 +770,9 @@ body {
 
 .num,
 .cabo,
-.bg .num {
+.bg .num,
+[frame-view="bg"]::before,
+[frame-view="bg"]::after {
 	opacity: 0;
 	pointer-events: none;
 	transition: opacity .15s ease-in-out;
