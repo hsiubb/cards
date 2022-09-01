@@ -3,6 +3,7 @@
 	--height: 966px;
 	--halfW: 336px;
 	--quatW: 168px;
+	--borderW: 6px;
 }
 *, ::before, ::after {
 	box-sizing: border-box;
@@ -66,7 +67,7 @@ body {
 }
 
 
-.frame::before,
+/*.frame::before,*/
 .frame::after {
 	content: '';
 	position: absolute;
@@ -115,27 +116,13 @@ body {
 	background: linear-gradient(-36.25deg, transparent, #049, #fff, #049, transparent);
 }
 
-/*.line-bg {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	height: 1380px;
-	transform: translate(-50%, -50%) skew(-35deg, 0);
-	background: linear-gradient(-36.25deg, transparent, #049, #fff, #049, transparent);
-}*/
 .num {
 	position: absolute;
-	top: 50%;
-	left: 50%;
+	top: 25%;
+	left: 25%;
 	width: 50%;
 	height: 50%;
 	transform: translate(-50%, -50%);
-}
-.num .num {
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
 }
 
 
@@ -146,17 +133,18 @@ body {
 }
 
 .circle {
-	width: var(--halfW);
-	height: var(--halfW);
+	width: calc(var(--width) / 2);
+	height: calc(var(--width) / 2);
+	/*height: calc(var(--width) / 2);*/
 	border-radius: 50%;
 }
 .circle::before {
 	content: '';
 	position: absolute;
-	top: 6px;
-	left: 6px;
-	width: 324px;
-	height: 324px;
+	top: var(--borderW);
+	left: var(--borderW);
+	width: calc(var(--width) / 2 - var(--borderW) * 2);
+	height: calc(var(--width) / 2 - var(--borderW) * 2);
 
 	background: #013;
 	border-radius: 50%;
@@ -176,16 +164,7 @@ body {
 	border-radius: 50%;
 }
 .line-0-1::before {
-	content: '';
-	position: absolute;
-	top: 6px;
-	left: 6px;
-	width: 324px;
-	height: 471px;
-
-	background: #013;
-	border-radius: 50%;
-	overflow: hidden;
+	height: calc(var(--height) / 2 - var(--borderW) * 2);;
 }
 
 
@@ -229,11 +208,9 @@ body {
 }
 .line-2-2 {
 	width: 10px;
-	/*left: 40%;*/
 	left: 46.1%;
 	bottom: 0;
 	height: 40%;
-	/*transform: skew(-56deg, 0);*/
 	transform: skew(-51deg, 0);
 	background: linear-gradient(to top, transparent, #049, #fff);
 }
@@ -298,7 +275,7 @@ body {
 .line-5-1 {
 	top: 0;
 	width: 100%;
-	height: 6px;
+	height: var(--borderW);
 	background: linear-gradient(to right, transparent, #049, #fff 25%, #049, transparent);
 }
 .line-5-2 {
@@ -326,8 +303,8 @@ body {
 .line-6-1 {
 	bottom: 0;
 	right: 0;
-	width: var(--halfW);
-	height: var(--halfW);
+	width: calc(var(--width) / 2);
+	height: calc(var(--width) / 2);
 
 	background: linear-gradient(60deg, #049, #fff, #049, transparent, #049, #fff, #049);
 	border-radius: 50%;
@@ -407,8 +384,8 @@ body {
 .line-9-1 {
 	top: 0;
 	right: 0;
-	width: var(--halfW);
-	height: var(--halfW);
+	width: calc(var(--width) / 2);
+	height: calc(var(--width) / 2);
 	background: linear-gradient(60deg, #049, #fff, #049, transparent, #049, #fff, #049);
 	border-radius: 50%;
 }
@@ -586,12 +563,12 @@ body {
 	pointer-events: none;
 }
 .skill::before,
-.skill::after {
+.skill .skill-des {
 	position: absolute;
 	left: 0;
 	right: 0;
 }
-.skill::after {
+.skill .skill-des {
 	font-size: 24px;
 	line-height: 1.5;
 	text-align: left;
@@ -599,38 +576,32 @@ body {
 }
 
 .cabo-skill::before { top: 0; }
-.cabo-skill::after { bottom: 1.5em; }
+.cabo-skill .skill-des { bottom: 3em; }
 [frame-view="7"] .cabo-skill::before,
-[frame-view="8"] .cabo-skill::before,
-[frame-view="7"] .cabo-skill::after,
-[frame-view="8"] .cabo-skill::after {
+[frame-view="8"] .cabo-skill::before {
 	content: 'PEEK';
 }
 
 [frame-view="9"] .cabo-skill::before,
-[frame-view="10"] .cabo-skill::before,
-[frame-view="9"] .cabo-skill::after,
-[frame-view="10"] .cabo-skill::after {
+[frame-view="10"] .cabo-skill::before {
 	content: 'SPY';
 }
 
 [frame-view="11"] .cabo-skill::before,
-[frame-view="12"] .cabo-skill::before,
-[frame-view="11"] .cabo-skill::after,
-[frame-view="12"] .cabo-skill::after {
+[frame-view="12"] .cabo-skill::before {
 	content: 'SWAP';
 }
 
-[frame-view="7"] .cabo-skill::after,
-[frame-view="8"] .cabo-skill::after {
+[frame-view="7"] .cabo-skill .skill-des::after,
+[frame-view="8"] .cabo-skill .skill-des::after {
 	content: '🦄️ 查看自己一张牌';
 }
-[frame-view="9"] .cabo-skill::after,
-[frame-view="10"] .cabo-skill::after {
+[frame-view="9"] .cabo-skill .skill-des::after,
+[frame-view="10"] .cabo-skill .skill-des::after {
 	content: '🦄️ 查看对手一张牌';
 }
-[frame-view="11"] .cabo-skill::after,
-[frame-view="12"] .cabo-skill::after {
+[frame-view="11"] .cabo-skill .skill-des::after,
+[frame-view="12"] .cabo-skill .skill-des::after {
 	content: '🦄️ 与对手交换一张牌';
 }
 
@@ -638,8 +609,8 @@ body {
 .loveletter-skill::before {
 	top: 0;
 }
-.loveletter-skill::after {
-	bottom: 0;
+.loveletter-skill .skill-des {
+	bottom: 1.5em;
 }
 
 [frame-view="11"] .loveletter-skill::before,
@@ -666,43 +637,64 @@ body {
 [frame-view="1"] .loveletter-skill::before { content: '守卫'; }
 [frame-view="0"][frame-type='diamond'] .loveletter-skill::before { content: '间谍'; }
 
-[frame-view="9"][frame-type='diamond'] .loveletter-skill::after {
-	content: '💌 玩家若弃掉公主，则出局';
+[frame-type='diamond'] .loveletter-skill .skill-des::before,
+[frame-view="0"][frame-type='club'] .loveletter-skill .skill-des::before,
+[frame-view="1"] .loveletter-skill .skill-des::before,
+[frame-view="2"][frame-type='club'] .loveletter-skill .skill-des::before,
+[frame-view="3"][frame-type='club'] .loveletter-skill .skill-des::before,
+[frame-view="4"][frame-type='club'] .loveletter-skill .skill-des::before,
+[frame-view="5"][frame-type='club'] .loveletter-skill .skill-des::before,
+[frame-view="6"][frame-type='club'] .loveletter-skill .skill-des::before {content: '💌 ';}
+
+/* 情书隐藏 */
+[frame-view="bg"] .loveletter-skill .skill-des,
+[frame-view="13"] .loveletter-skill .skill-des,
+[frame-view="12"] .loveletter-skill .skill-des,
+[frame-view="10"] .loveletter-skill .skill-des,
+[frame-view="11"][frame-type='club'] .loveletter-skill .skill-des::before,
+[frame-view="11"][frame-type='heart'] .loveletter-skill .skill-des::before,
+[frame-view="11"][frame-type='spade'] .loveletter-skill .skill-des::before {
+	opacity: 0;
 }
-[frame-view="8"][frame-type='diamond'] .loveletter-skill::after {
-	content: '💌 如果手牌有王子或国王，则必须打出女伯爵';
+
+
+[frame-view="9"][frame-type='diamond'] .loveletter-skill .skill-des::after {
+	content: '玩家若弃掉公主，则出局';
 }
-[frame-view="7"][frame-type='diamond'] .loveletter-skill::after {
-	content: '💌 选择一位玩家与其交换手牌';
+[frame-view="8"][frame-type='diamond'] .loveletter-skill .skill-des::after {
+	content: '如果手牌有王子或国王，则必须打出女伯爵';
 }
-[frame-view="6"][frame-type='diamond'] .loveletter-skill::after,
-[frame-view="6"][frame-type='club'] .loveletter-skill::after {
-	content: '💌 从牌堆摸两张牌，然后从手牌中选择两张牌放回牌堆底';
+[frame-view="7"][frame-type='diamond'] .loveletter-skill .skill-des::after {
+	content: '选择一位玩家与其交换手牌';
 }
-[frame-view="5"][frame-type='diamond'] .loveletter-skill::after,
-[frame-view="5"][frame-type='club'] .loveletter-skill::after {
-	content: '💌 选择一位玩家让其弃掉手牌';
+[frame-view="6"][frame-type='diamond'] .loveletter-skill .skill-des::after,
+[frame-view="6"][frame-type='club'] .loveletter-skill .skill-des::after {
+	content: '从牌堆摸两张牌，然后从手牌中选择两张牌放回牌堆底';
 }
-[frame-view="4"][frame-type='diamond'] .loveletter-skill::after,
-[frame-view="4"][frame-type='club'] .loveletter-skill::after {
-	content: '💌 一回合内不受技能效果影响';
+[frame-view="5"][frame-type='diamond'] .loveletter-skill .skill-des::after,
+[frame-view="5"][frame-type='club'] .loveletter-skill .skill-des::after {
+	content: '选择一位玩家让其弃掉手牌';
 }
-[frame-view="3"][frame-type='diamond'] .loveletter-skill::after,
-[frame-view="3"][frame-type='club'] .loveletter-skill::after {
-	content: '💌 与任一位玩家的手牌比大小，数字小的玩家出局';
+[frame-view="4"][frame-type='diamond'] .loveletter-skill .skill-des::after,
+[frame-view="4"][frame-type='club'] .loveletter-skill .skill-des::after {
+	content: '一回合内不受技能效果影响';
 }
-[frame-view="2"][frame-type='diamond'] .loveletter-skill::after,
-[frame-view="2"][frame-type='club'] .loveletter-skill::after {
-	content: '💌 秘密查看一位玩家的手牌';
+[frame-view="3"][frame-type='diamond'] .loveletter-skill .skill-des::after,
+[frame-view="3"][frame-type='club'] .loveletter-skill .skill-des::after {
+	content: '与任一位玩家的手牌比大小，数字小的玩家出局';
 }
-[frame-view="11"][frame-type='diamond'] .loveletter-skill::after,
-[frame-view="1"] .loveletter-skill::after {
-	content: '💌 猜任一位玩家的手牌，如果猜中则对方出局，不能猜守卫';
+[frame-view="2"][frame-type='diamond'] .loveletter-skill .skill-des::after,
+[frame-view="2"][frame-type='club'] .loveletter-skill .skill-des::after {
+	content: '秘密查看一位玩家的手牌';
+}
+[frame-view="11"][frame-type='diamond'] .loveletter-skill .skill-des::after,
+[frame-view="1"] .loveletter-skill .skill-des::after {
+	content: '猜一位玩家的手牌，如果猜中则对方出局（不能猜守卫）';
 	letter-spacing: -1px;
 }
-[frame-view="0"][frame-type='diamond'] .loveletter-skill::after,
-[frame-view="0"][frame-type='club'] .loveletter-skill::after {
-	content: '💌 若本轮你存活且只有你打出或弃掉间谍，额外获得一分';
+[frame-view="0"][frame-type='diamond'] .loveletter-skill .skill-des::after,
+[frame-view="0"][frame-type='club'] .loveletter-skill .skill-des::after {
+	content: '若本轮你存活且只有你打出或弃掉间谍，额外获得一分';
 }
 /*
 侍卫 1 5 出牌时猜任一位玩家的手牌，如果猜中则出局，其中不能猜测对方为侍卫
@@ -715,7 +707,7 @@ body {
 公主 8 1 玩家若弃掉公主，则出局
 */
 
-.silver-skill::after {
+.silver-skill .skill-des::after {
 }
 /*
 00 villager		村民		持续：如果两张 0 同时展示在场上，本轮立即结束
@@ -734,6 +726,90 @@ body {
 13 doppelganger	二重身	交换牌时可视作其他牌
 */
 
+
+.coup-skill {
+}
+/* 40个1元 20个5元 合计 140元 */
+
+
+/*
+[frame-type='diamond']
+[frame-type='club']
+[frame-type='heart']
+[frame-type='spade']
+*/
+.hanafuda-skill .skill-des {
+}
+.hanafuda-skill {
+}
+.hanafuda-skill .skill-des {
+	bottom: 0;
+}
+.hanafuda-skill .skill-des::before {
+	content: '🌸 ';
+}
+[frame-view="bg"] .hanafuda-skill .skill-des::before,
+[frame-view="0"] .hanafuda-skill .skill-des::before,
+[frame-view="13"] .hanafuda-skill .skill-des::before {display: none;}
+[frame-view="1"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「光」松上鹤'; }
+[frame-view="1"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「赤」松上赤短'; }
+[frame-view="1"][frame-type='heart'] .hanafuda-skill .skill-des::after,
+[frame-view="1"][frame-type='spade'] .hanafuda-skill .skill-des::after { content: '「粕」松'; }
+
+[frame-view="2"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「种」梅上莺'; }
+[frame-view="2"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「赤」梅上赤短'; }
+[frame-view="2"][frame-type='heart'] .hanafuda-skill .skill-des::after,
+[frame-view="2"][frame-type='spade'] .hanafuda-skill .skill-des::after { content: '「粕」梅'; }
+
+[frame-view="3"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「光」樱上幕'; }
+[frame-view="3"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「赤」樱上赤短'; }
+[frame-view="3"][frame-type='heart'] .hanafuda-skill .skill-des::after,
+[frame-view="3"][frame-type='spade'] .hanafuda-skill .skill-des::after { content: '「粕」樱'; }
+
+[frame-view="4"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「种」藤上鹃'; }
+[frame-view="4"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「短」藤上短册'; }
+[frame-view="4"][frame-type='heart'] .hanafuda-skill .skill-des::after,
+[frame-view="4"][frame-type='spade'] .hanafuda-skill .skill-des::after { content: '「粕」藤'; }
+
+[frame-view="5"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「种」蒲上八桥'; }
+[frame-view="5"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「短」蒲上短册'; }
+[frame-view="5"][frame-type='heart'] .hanafuda-skill .skill-des::after,
+[frame-view="5"][frame-type='spade'] .hanafuda-skill .skill-des::after { content: '「粕」菖蒲'; }
+
+[frame-view="6"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「种」牡丹蝶'; }
+[frame-view="6"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「青」牡丹青短'; }
+[frame-view="6"][frame-type='heart'] .hanafuda-skill .skill-des::after,
+[frame-view="6"][frame-type='spade'] .hanafuda-skill .skill-des::after { content: '「粕」牡丹'; }
+
+[frame-view="7"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「种」萩间猪'; }
+[frame-view="7"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「短」萩上短册'; }
+[frame-view="7"][frame-type='heart'] .hanafuda-skill .skill-des::after,
+[frame-view="7"][frame-type='spade'] .hanafuda-skill .skill-des::after { content: '「粕」萩'; }
+
+[frame-view="8"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「光」芒上月'; }
+[frame-view="8"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「种」芒上雁'; }
+[frame-view="8"][frame-type='heart'] .hanafuda-skill .skill-des::after,
+[frame-view="8"][frame-type='spade'] .hanafuda-skill .skill-des::after { content: '「粕」芒草'; }
+
+[frame-view="9"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「种」「粕」菊上杯'; }
+[frame-view="9"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「青」菊上青短'; }
+[frame-view="9"][frame-type='heart'] .hanafuda-skill .skill-des::after,
+[frame-view="9"][frame-type='spade'] .hanafuda-skill .skill-des::after { content: '「粕」菊'; }
+
+[frame-view="10"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「种」枫间鹿'; }
+[frame-view="10"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「青」枫上青短'; }
+[frame-view="10"][frame-type='heart'] .hanafuda-skill .skill-des::after,
+[frame-view="10"][frame-type='spade'] .hanafuda-skill .skill-des::after { content: '「粕」枫'; }
+
+[frame-view="11"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「光」柳上风'; }
+[frame-view="11"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「种」柳上燕'; }
+[frame-view="11"][frame-type='heart'] .hanafuda-skill .skill-des::after { content: '「短」柳上短册'; }
+[frame-view="11"][frame-type='spade'] .hanafuda-skill .skill-des::after { content: '「粕」柳雷雨鼓'; }
+
+[frame-view="12"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「光」桐上凰'; }
+[frame-view="12"][frame-type='club'] .hanafuda-skill .skill-des::after,
+[frame-view="12"][frame-type='heart'] .hanafuda-skill .skill-des::after,
+[frame-view="12"][frame-type='spade'] .hanafuda-skill .skill-des::after { content: '「粕」泡桐'; }
 
 .num {z-index: 2;}
 .bg .num-0,
@@ -771,6 +847,7 @@ body {
 .num,
 .cabo,
 .bg .num,
+.bg .skill,
 [frame-view="bg"]::before,
 [frame-view="bg"]::after {
 	opacity: 0;
