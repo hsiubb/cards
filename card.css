@@ -755,62 +755,62 @@ body {
 [frame-view="bg"] .hanafuda-skill .skill-des::before,
 [frame-view="0"] .hanafuda-skill .skill-des::before,
 [frame-view="13"] .hanafuda-skill .skill-des::before {display: none;}
-[frame-view="1"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「光」松上鹤'; }
-[frame-view="1"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「赤」松上赤短'; }
+[frame-view="1"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「光」松上鹤'; color: gold; }
+[frame-view="1"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「赤」松上赤短'; color: #c33; }
 [frame-view="1"][frame-type='heart'] .hanafuda-skill .skill-des::after,
 [frame-view="1"][frame-type='spade'] .hanafuda-skill .skill-des::after { content: '「粕」松'; }
 
-[frame-view="2"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「种」梅上莺'; }
-[frame-view="2"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「赤」梅上赤短'; }
+[frame-view="2"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「种」梅上莺'; color: #3c3; }
+[frame-view="2"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「赤」梅上赤短'; color: #c33; }
 [frame-view="2"][frame-type='heart'] .hanafuda-skill .skill-des::after,
 [frame-view="2"][frame-type='spade'] .hanafuda-skill .skill-des::after { content: '「粕」梅'; }
 
-[frame-view="3"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「光」樱上幕'; }
-[frame-view="3"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「赤」樱上赤短'; }
+[frame-view="3"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「光」樱上幕'; color: gold; }
+[frame-view="3"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「赤」樱上赤短'; color: #c33; }
 [frame-view="3"][frame-type='heart'] .hanafuda-skill .skill-des::after,
 [frame-view="3"][frame-type='spade'] .hanafuda-skill .skill-des::after { content: '「粕」樱'; }
 
-[frame-view="4"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「种」藤上鹃'; }
-[frame-view="4"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「短」藤上短册'; }
+[frame-view="4"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「种」藤上鹃'; color: #3c3; }
+[frame-view="4"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「短」藤上短册'; color: ; }
 [frame-view="4"][frame-type='heart'] .hanafuda-skill .skill-des::after,
 [frame-view="4"][frame-type='spade'] .hanafuda-skill .skill-des::after { content: '「粕」藤'; }
 
-[frame-view="5"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「种」蒲上八桥'; }
-[frame-view="5"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「短」蒲上短册'; }
+[frame-view="5"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「种」蒲上八桥'; color: #3c3; }
+[frame-view="5"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「短」蒲上短册'; color: ; }
 [frame-view="5"][frame-type='heart'] .hanafuda-skill .skill-des::after,
 [frame-view="5"][frame-type='spade'] .hanafuda-skill .skill-des::after { content: '「粕」菖蒲'; }
 
-[frame-view="6"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「种」牡丹蝶'; }
-[frame-view="6"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「青」牡丹青短'; }
+[frame-view="6"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「种」牡丹蝶'; color: #3c3; }
+[frame-view="6"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「青」牡丹青短'; color: violet;  }
 [frame-view="6"][frame-type='heart'] .hanafuda-skill .skill-des::after,
 [frame-view="6"][frame-type='spade'] .hanafuda-skill .skill-des::after { content: '「粕」牡丹'; }
 
-[frame-view="7"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「种」萩间猪'; }
-[frame-view="7"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「短」萩上短册'; }
+[frame-view="7"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「种」萩间猪'; color: #3c3; }
+[frame-view="7"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「短」萩上短册'; color: ; }
 [frame-view="7"][frame-type='heart'] .hanafuda-skill .skill-des::after,
 [frame-view="7"][frame-type='spade'] .hanafuda-skill .skill-des::after { content: '「粕」萩'; }
 
-[frame-view="8"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「光」芒上月'; }
-[frame-view="8"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「种」芒上雁'; }
+[frame-view="8"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「光」芒上月'; color: gold; }
+[frame-view="8"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「种」芒上雁'; color: #3c3; }
 [frame-view="8"][frame-type='heart'] .hanafuda-skill .skill-des::after,
 [frame-view="8"][frame-type='spade'] .hanafuda-skill .skill-des::after { content: '「粕」芒草'; }
 
-[frame-view="9"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「种」「粕」菊上杯'; }
-[frame-view="9"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「青」菊上青短'; }
+[frame-view="9"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「种」「粕」菊上杯'; color: #3c3; }
+[frame-view="9"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「青」菊上青短'; color: violet;  }
 [frame-view="9"][frame-type='heart'] .hanafuda-skill .skill-des::after,
 [frame-view="9"][frame-type='spade'] .hanafuda-skill .skill-des::after { content: '「粕」菊'; }
 
-[frame-view="10"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「种」枫间鹿'; }
-[frame-view="10"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「青」枫上青短'; }
+[frame-view="10"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「种」枫间鹿'; color: #3c3; }
+[frame-view="10"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「青」枫上青短'; color: violet;  }
 [frame-view="10"][frame-type='heart'] .hanafuda-skill .skill-des::after,
 [frame-view="10"][frame-type='spade'] .hanafuda-skill .skill-des::after { content: '「粕」枫'; }
 
-[frame-view="11"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「光」柳上风'; }
-[frame-view="11"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「种」柳上燕'; }
-[frame-view="11"][frame-type='heart'] .hanafuda-skill .skill-des::after { content: '「短」柳上短册'; }
+[frame-view="11"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「光」柳上风'; color: gold; }
+[frame-view="11"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「种」柳上燕'; color: #3c3; }
+[frame-view="11"][frame-type='heart'] .hanafuda-skill .skill-des::after { content: '「短」柳上短册'; color: ; }
 [frame-view="11"][frame-type='spade'] .hanafuda-skill .skill-des::after { content: '「粕」柳雷雨鼓'; }
 
-[frame-view="12"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「光」桐上凰'; }
+[frame-view="12"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「光」桐上凰'; color: gold; }
 [frame-view="12"][frame-type='club'] .hanafuda-skill .skill-des::after,
 [frame-view="12"][frame-type='heart'] .hanafuda-skill .skill-des::after,
 [frame-view="12"][frame-type='spade'] .hanafuda-skill .skill-des::after { content: '「粕」泡桐'; }
