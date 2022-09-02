@@ -9,7 +9,8 @@
 </head>
 <body>
 	<div class="container">
-		<div class="frame" frame-type="diamond" frame-view="all">
+		<!-- <div class="frame" style="position:absolute;right:72px;bottom:72px;" frame-type="diamond" frame-view=""></div> -->
+		<div class="frame" frame-type="spade" frame-view="">
 			<div class="num num-0">
 				<div class="line line-0-1 circle"></div>
 			</div>
@@ -46,7 +47,7 @@
 			<div class="num num-6">
 				<div class="line line-6-1"></div>
 				<div class="line line-6-2"></div>
-				<div class="line line-base"></div>
+				<!-- <div class="line line-base"></div> -->
 			</div>
 
 			<div class="num num-7">
@@ -62,7 +63,7 @@
 			<div class="num num-9">
 				<div class="line line-9-1"></div>
 				<div class="line line-9-2"></div>
-				<div class="line line-base"></div>
+				<!-- <div class="line line-base"></div> -->
 			</div>
 
 			<div class="num num-10">
@@ -174,6 +175,21 @@
 
 				</dl>
 			</div>
+
+			<div class="skill hanafuda-skill">
+				<div class="skill-des"></div>
+			</div>
+			<div class="skill loveletter-skill">
+				<div class="skill-des"></div>
+			</div>
+			<div class="skill cabo-skill">
+				<div class="skill-des"></div>
+			</div>
+
+			<div class="mark"></div>
+
+
+
 			<!-- <div class="cabo">
 				<dl>
 					<dt>行动</dt>
@@ -228,19 +244,6 @@
 				<dd>与对手交换一张牌</dd> -->
 
 			<!-- <h1 class="title">Cabo</h1> -->
-
-			<div class="skill cabo-skill">
-				<div class="skill-des"></div>
-			</div>
-			<div class="skill loveletter-skill">
-				<div class="skill-des"></div>
-			</div>
-			<!-- <div class="skill coup-skill">
-				<div class="skill-des"></div>
-			</div> -->
-			<div class="skill hanafuda-skill">
-				<div class="skill-des"></div>
-			</div>
 		</div>
 	</div>
 
@@ -254,19 +257,26 @@
 			frame.setAttribute('frame-view', num);
 			frame.setAttribute('frame-type', ['diamond', 'club', 'heart', 'spade'][type]);
 		}
-		function change() {
+		function change(mode) {
+			// if(mode) {
+			// 	cur = 'type';
+			// }
 			setInterval(() => {
-				switch(cur) {
-					case 13:
-					case 'all':
-						cur = 'bg';
-						type = (type + 1) % 4;
-						break;
-					case 'bg':
-						cur = 0;
-						break;
-					default:
-						cur = (cur + 1) % 14;
+				if(mode) {
+					type = (type + 1) % 4;
+				} else {
+					switch(cur) {
+						case 13:
+						case 'all':
+							cur = 'bg';
+							type = (type + 1) % 4;
+							break;
+						case 'bg':
+							cur = 0;
+							break;
+						default:
+							cur = (cur + 1) % 14;
+					}
 				}
 
 				setFrame(cur, type);
@@ -274,7 +284,10 @@
 		}
 
 		if(cur === status) {
-			change();
+			change(0);
+		}
+		if(status === 'type') {
+			change(1)
 		}
 		// document.querySelector('[frame-view]').setAttribute('frame-view', 2);
 	</script>

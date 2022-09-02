@@ -4,6 +4,13 @@
 	--halfW: 336px;
 	--quatW: 168px;
 	--borderW: 6px;
+
+	--sysColor: rgba(255, 255, 255, .5);
+	/*--caboColor: rgba(255, 255, 255, .6);*/
+	--caboColor: rgba(255, 255, 255, .8);
+	/*--hanaColor: HotPink;*/
+	--hanaColor: #d10f1b;
+	--loveColor: #af3749;
 }
 *, ::before, ::after {
 	box-sizing: border-box;
@@ -24,10 +31,13 @@ html, body {
 	font-family: Krungthep;
 	font-family: SignPainter;
 	font-family: Nanum Pen Script;
+	font-family: Helvetica;
 
 	font-family: Hiragino Maru Gothic ProN;
 	font-family: YuKyokasho;*/
-	font-family: Tsukushi A Round Gothic;
+	/*font-family: Tsukushi A Round Gothic;*/
+	font-family: '雅痞-简';
+	/*font-family: '兰亭黑-简';*/
 }
 body {
 	display: flex;
@@ -49,7 +59,7 @@ body {
 	overflow: hidden;
 }
 .container::before {
-	content: '';
+	/*content: '';*/
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -66,8 +76,80 @@ body {
 	overflow: hidden;
 }
 
+.mark {
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+	width: calc(var(--quatW) / 8);
+	height: calc(var(--quatW) / 8);
+}
+[frame-type='diamond'] .mark::after {
+	border-radius: 50%;
+	background: radial-gradient(transparent, #fff, transparent);
+}
+[frame-type='club'] .mark::after {
+	background: linear-gradient(to right bottom, #fff, transparent, #fff);
+	border-radius: 0 50%;
+	transform: scale(.75, 1) rotate(-45deg);
+}
+[frame-type='heart'] .mark::after {
+	background: linear-gradient(to top, transparent, #049, #fff 75%, transparent 80%, #fff 85%, transparent 90%, #fff 95%, transparent);
+}
+[frame-type='spade'] .mark {
+	background: #fff;
+}
+/*[frame-type='spade'] .mark::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}*/
+/*.frame::after {
+	content: '';
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+	width: calc(var(--quatW) / 8);
+	height: calc(var(--quatW) / 8);
+}
+[frame-type='diamond']::after {
+	border-radius: 50%;
+	background: radial-gradient(transparent, #fff, transparent);
+}
+[frame-type='club']::after {
+	background: linear-gradient(to right bottom, #fff, transparent, #fff);
+	border-radius: 0 50%;
+	transform: scale(.75, 1) rotate(-45deg);
+}
+[frame-type='heart']::after {
+	background: linear-gradient(to top, transparent, #049, #fff 75%, transparent 80%, #fff 85%, transparent 90%, #fff 95%, transparent);
+}
+[frame-type='spade']::after {
+	background: radial-gradient(transparent, transparent 75%, #fff);
+}
+*/
 
-/*.frame::before,*/
+/*
+
+[frame-type='diamond']::after {
+	right: 7px;
+	bottom: 35px;
+	background: linear-gradient(-60deg, transparent, #049, #fff);
+	transform: scale(.5, 1) rotate(45deg);
+}
+[frame-type='club']::after {
+	right: 38px;
+	bottom: 92px;
+	width: calc(var(--quatW) / 8);
+	height: calc(var(--quatW) / 8);
+	border-radius: 50%;
+	background: linear-gradient(165deg, #fff, #049 75%, transparent);
+	box-shadow: -18px 26px 0 #fff, 18px 26px 0 #fff;
+}
+*/
+/*.frame::before,
 .frame::after {
 	content: '';
 	position: absolute;
@@ -85,18 +167,10 @@ body {
 	right: 0;
 	background: linear-gradient(to top, transparent, #049, #fff 95%, transparent);
 }
-[frame-type='diamond']::before {
-	background: linear-gradient(to bottom, transparent, #049, #fff 95%, transparent);
-}
-[frame-type='club']::before {
-	background: linear-gradient(to bottom, transparent, #049, #fff 85%, transparent 90%, #fff 95%, transparent);
-}
-[frame-type='heart']::before {
-	background: linear-gradient(to bottom, transparent, #049, #fff 75%, transparent 80%, #fff 85%, transparent 90%, #fff 95%, transparent);
-}
-[frame-type='spade']::before {
-	background: linear-gradient(to bottom, transparent, #049, #fff 65%, transparent 70%, #fff 75%, transparent 80%, #fff 85%, transparent 90%, #fff 95%, transparent);
-}
+[frame-type='diamond']::before { background: linear-gradient(to bottom, transparent, #049, #fff 95%, transparent); }
+[frame-type='club']::before { background: linear-gradient(to bottom, transparent, #049, #fff 85%, transparent 90%, #fff 95%, transparent); }
+[frame-type='heart']::before { background: linear-gradient(to bottom, transparent, #049, #fff 75%, transparent 80%, #fff 85%, transparent 90%, #fff 95%, transparent); }
+[frame-type='spade']::before { background: linear-gradient(to bottom, transparent, #049, #fff 65%, transparent 70%, #fff 75%, transparent 80%, #fff 85%, transparent 90%, #fff 95%, transparent); }
 [frame-type='diamond']::after {
 	background: linear-gradient(to top, transparent, #049, #fff 95%, transparent);
 }
@@ -108,7 +182,9 @@ body {
 }
 [frame-type='spade']::after {
 	background: linear-gradient(to top, transparent, #049, #fff 65%, transparent 70%, #fff 75%, transparent 80%, #fff 85%, transparent 90%, #fff 95%, transparent);
-}
+}*/
+
+
 
 .line {
 	z-index: 2;
@@ -563,7 +639,8 @@ body {
 	font-size: 40px;
 	line-height: 1;
 	text-align: right;
-	color: rgba(255, 255, 255, .5);
+	vertical-align: middle;
+	color: var(--sysColor);
 	pointer-events: none;
 }
 .skill::before,
@@ -571,59 +648,97 @@ body {
 	position: absolute;
 	left: 0;
 	right: 0;
+	vertical-align: middle;
 }
 .skill .skill-des {
 	font-size: 24px;
 	line-height: 1.5;
 	text-align: left;
-	color: rgba(255, 255, 255, .3);
+	/*color: rgba(255, 255, 255, .4);*/
+	color: var(--sysColor);
+}
+.skill .skill-des::before,
+.skill .skill-des::after {
+	vertical-align: middle;
+}
+.skill .skill-des::after {
+	position: relative;
+	font-size: .9em;
 }
 
-.cabo-skill::before { top: 0; }
-.cabo-skill .skill-des { bottom: 3em; }
+.skill::before {
+	top: 0;
+	vertical-align: middle;
+}
+.skill + .skill::before {
+	top: 1.5em;
+}
+.skill + .skill + .skill::before {
+	top: 3em;
+}
+.skill .skill-des {
+	bottom: 0;
+}
+.skill + .skill .skill-des {
+	bottom: 1.5em;
+}
+.skill + .skill + .skill .skill-des {
+	bottom: 3em;
+}
+
+
+.cabo-skill::before {
+	color: var(--caboColor);
+}
 [frame-view="7"] .cabo-skill::before,
 [frame-view="8"] .cabo-skill::before {
 	content: 'PEEK';
 }
-
 [frame-view="9"] .cabo-skill::before,
 [frame-view="10"] .cabo-skill::before {
 	content: 'SPY';
 }
-
 [frame-view="11"] .cabo-skill::before,
 [frame-view="12"] .cabo-skill::before {
 	content: 'SWAP';
 }
 
+.skill-des::before {
+	display: inline-block;
+	width: 60px;
+	padding-right: 5px;
+	text-align: right;
+	vertical-align: middle;
+}
+
+[frame-view="7"] .cabo-skill .skill-des::before,
+[frame-view="8"] .cabo-skill .skill-des::before,
+[frame-view="9"] .cabo-skill .skill-des::before,
+[frame-view="10"] .cabo-skill .skill-des::before,
+[frame-view="11"] .cabo-skill .skill-des::before,
+[frame-view="12"] .cabo-skill .skill-des::before {
+	content: 'cabo';
+	color: var(--caboColor);
+	transform: scale(.8, 1) translate(5%, 0);
+}
 [frame-view="7"] .cabo-skill .skill-des::after,
 [frame-view="8"] .cabo-skill .skill-des::after {
-	content: '🦄️ 查看自己一张牌';
+	content: '查看自己一张牌';
 }
 [frame-view="9"] .cabo-skill .skill-des::after,
 [frame-view="10"] .cabo-skill .skill-des::after {
-	content: '🦄️ 查看对手一张牌';
+	content: '查看对手一张牌';
 }
 [frame-view="11"] .cabo-skill .skill-des::after,
 [frame-view="12"] .cabo-skill .skill-des::after {
-	content: '🦄️ 与对手交换一张牌';
+	content: '与对手交换一张牌';
 }
 
 
-.loveletter-skill::before {
-	top: 0;
-}
-.loveletter-skill .skill-des {
-	bottom: 1.5em;
-}
+/* 情书 */
+.loveletter-skill { color: var(--loveColor); }
 
-[frame-view="11"] .loveletter-skill::before,
-[frame-view="9"] .loveletter-skill::before,
-[frame-view="8"] .loveletter-skill::before,
-[frame-view="7"] .loveletter-skill::before {
-	top: 1.5em;
-}
-
+/* 情书 名称 */
 [frame-view="9"][frame-type='diamond'] .loveletter-skill::before { content: '公主'; }
 [frame-view="8"][frame-type='diamond'] .loveletter-skill::before { content: '女伯爵'; }
 [frame-view="7"][frame-type='diamond'] .loveletter-skill::before { content: '国王'; }
@@ -648,9 +763,14 @@ body {
 [frame-view="3"][frame-type='club'] .loveletter-skill .skill-des::before,
 [frame-view="4"][frame-type='club'] .loveletter-skill .skill-des::before,
 [frame-view="5"][frame-type='club'] .loveletter-skill .skill-des::before,
-[frame-view="6"][frame-type='club'] .loveletter-skill .skill-des::before {content: '💌 ';}
+[frame-view="6"][frame-type='club'] .loveletter-skill .skill-des::before {
+	content: '情书';
+	color: var(--loveColor);
+}
 
-/* 情书隐藏 */
+/* 情书 隐藏 */
+[frame-view=""] .loveletter-skill .skill-des,
+[frame-view="all"] .loveletter-skill .skill-des,
 [frame-view="bg"] .loveletter-skill .skill-des,
 [frame-view="13"] .loveletter-skill .skill-des,
 [frame-view="12"] .loveletter-skill .skill-des,
@@ -662,6 +782,7 @@ body {
 }
 
 
+/* 情书 技能 */
 [frame-view="9"][frame-type='diamond'] .loveletter-skill .skill-des::after {
 	content: '玩家若弃掉公主，则出局';
 }
@@ -673,7 +794,7 @@ body {
 }
 [frame-view="6"][frame-type='diamond'] .loveletter-skill .skill-des::after,
 [frame-view="6"][frame-type='club'] .loveletter-skill .skill-des::after {
-	content: '从牌堆摸两张牌，然后从手牌中选择两张牌放回牌堆底';
+	content: '摸两张牌加入手牌，然后选择两张手牌放到牌堆底';
 }
 [frame-view="5"][frame-type='diamond'] .loveletter-skill .skill-des::after,
 [frame-view="5"][frame-type='club'] .loveletter-skill .skill-des::after {
@@ -693,12 +814,12 @@ body {
 }
 [frame-view="11"][frame-type='diamond'] .loveletter-skill .skill-des::after,
 [frame-view="1"] .loveletter-skill .skill-des::after {
-	content: '猜一位玩家的手牌，如果猜中则对方出局（不能猜守卫）';
+	content: '猜一位玩家的手牌，猜中则对方出局（不能猜守卫）';
 	letter-spacing: -1px;
 }
 [frame-view="0"][frame-type='diamond'] .loveletter-skill .skill-des::after,
 [frame-view="0"][frame-type='club'] .loveletter-skill .skill-des::after {
-	content: '若本轮你存活且只有你打出或弃掉间谍，额外获得一分';
+	content: '若本轮你存活且只有你打出/弃掉间谍，额外获得一分';
 }
 /*
 侍卫 1 5 出牌时猜任一位玩家的手牌，如果猜中则出局，其中不能猜测对方为侍卫
@@ -742,20 +863,127 @@ body {
 [frame-type='heart']
 [frame-type='spade']
 */
-.hanafuda-skill .skill-des {
-}
-.hanafuda-skill {
-}
-.hanafuda-skill .skill-des {
-	bottom: 0;
+
+/* 花札 */
+.hanafuda-skill::before {
+	color: var(--hanaColor);
 }
 .hanafuda-skill .skill-des::before {
-	content: '🌸 ';
+	content: '花札';
+	color: var(--hanaColor);
 }
-[frame-view="bg"] .hanafuda-skill .skill-des::before,
-[frame-view="0"] .hanafuda-skill .skill-des::before,
-[frame-view="13"] .hanafuda-skill .skill-des::before {display: none;}
-[frame-view="1"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「光」松上鹤'; color: gold; }
+[frame-view=""] .hanafuda-skill .skill-des,
+[frame-view="all"] .hanafuda-skill .skill-des,
+[frame-view="bg"] .hanafuda-skill .skill-des,
+[frame-view="0"] .hanafuda-skill .skill-des,
+[frame-view="13"] .hanafuda-skill .skill-des { opacity: 0; }
+
+[frame-view="1"][frame-type='diamond'] .hanafuda-skill::before { content: '松上鹤'; }
+[frame-view="1"][frame-type='club'] .hanafuda-skill::before { content: '松上赤短'; }
+[frame-view="1"][frame-type='heart'] .hanafuda-skill::before,
+[frame-view="1"][frame-type='spade'] .hanafuda-skill::before { content: '松'; }
+
+[frame-view="2"][frame-type='diamond'] .hanafuda-skill::before { content: '梅上莺'; }
+[frame-view="2"][frame-type='club'] .hanafuda-skill::before { content: '梅上赤短'; }
+[frame-view="2"][frame-type='heart'] .hanafuda-skill::before,
+[frame-view="2"][frame-type='spade'] .hanafuda-skill::before { content: '梅'; }
+
+[frame-view="3"][frame-type='diamond'] .hanafuda-skill::before { content: '樱上幕'; }
+[frame-view="3"][frame-type='club'] .hanafuda-skill::before { content: '樱上赤短'; }
+[frame-view="3"][frame-type='heart'] .hanafuda-skill::before,
+[frame-view="3"][frame-type='spade'] .hanafuda-skill::before { content: '樱'; }
+
+[frame-view="4"][frame-type='diamond'] .hanafuda-skill::before { content: '藤上鹃'; }
+[frame-view="4"][frame-type='club'] .hanafuda-skill::before { content: '藤上短册'; }
+[frame-view="4"][frame-type='heart'] .hanafuda-skill::before,
+[frame-view="4"][frame-type='spade'] .hanafuda-skill::before { content: '藤'; }
+
+[frame-view="5"][frame-type='diamond'] .hanafuda-skill::before { content: '蒲上八桥'; }
+[frame-view="5"][frame-type='club'] .hanafuda-skill::before { content: '蒲上短册'; }
+[frame-view="5"][frame-type='heart'] .hanafuda-skill::before,
+[frame-view="5"][frame-type='spade'] .hanafuda-skill::before { content: '菖蒲'; }
+
+[frame-view="6"][frame-type='diamond'] .hanafuda-skill::before { content: '牡丹蝶'; }
+[frame-view="6"][frame-type='club'] .hanafuda-skill::before { content: '牡丹青短'; }
+[frame-view="6"][frame-type='heart'] .hanafuda-skill::before,
+[frame-view="6"][frame-type='spade'] .hanafuda-skill::before { content: '牡丹'; }
+
+[frame-view="7"][frame-type='diamond'] .hanafuda-skill::before { content: '萩间猪'; }
+[frame-view="7"][frame-type='club'] .hanafuda-skill::before { content: '萩上短册'; }
+[frame-view="7"][frame-type='heart'] .hanafuda-skill::before,
+[frame-view="7"][frame-type='spade'] .hanafuda-skill::before { content: '萩'; }
+
+[frame-view="8"][frame-type='diamond'] .hanafuda-skill::before { content: '芒上月'; }
+[frame-view="8"][frame-type='club'] .hanafuda-skill::before { content: '芒上雁'; }
+[frame-view="8"][frame-type='heart'] .hanafuda-skill::before,
+[frame-view="8"][frame-type='spade'] .hanafuda-skill::before { content: '芒草'; }
+
+[frame-view="9"][frame-type='diamond'] .hanafuda-skill::before { content: '菊上杯'; }
+[frame-view="9"][frame-type='club'] .hanafuda-skill::before { content: '菊上青短'; }
+[frame-view="9"][frame-type='heart'] .hanafuda-skill::before,
+[frame-view="9"][frame-type='spade'] .hanafuda-skill::before { content: '菊'; }
+
+[frame-view="10"][frame-type='diamond'] .hanafuda-skill::before { content: '枫间鹿'; }
+[frame-view="10"][frame-type='club'] .hanafuda-skill::before { content: '枫上青短'; }
+[frame-view="10"][frame-type='heart'] .hanafuda-skill::before,
+[frame-view="10"][frame-type='spade'] .hanafuda-skill::before { content: '枫'; }
+
+[frame-view="11"][frame-type='diamond'] .hanafuda-skill::before { content: '柳上风'; }
+[frame-view="11"][frame-type='club'] .hanafuda-skill::before { content: '柳上燕'; }
+[frame-view="11"][frame-type='heart'] .hanafuda-skill::before { content: '柳上短册'; }
+[frame-view="11"][frame-type='spade'] .hanafuda-skill::before { content: '柳雷雨鼓'; }
+
+[frame-view="12"][frame-type='diamond'] .hanafuda-skill::before { content: '桐上凰'; }
+[frame-view="12"][frame-type='club'] .hanafuda-skill::before,
+[frame-view="12"][frame-type='heart'] .hanafuda-skill::before,
+[frame-view="12"][frame-type='spade'] .hanafuda-skill::before { content: '泡桐'; }
+
+/*.hanafuda-skill::before { color: var(--hanaColor) }*/
+
+
+.hanafuda-skill .skill-des::after {
+	content: '粕';
+}
+
+[frame-view="1"][frame-type='diamond'] .hanafuda-skill .skill-des::after,
+[frame-view="3"][frame-type='diamond'] .hanafuda-skill .skill-des::after,
+[frame-view="8"][frame-type='diamond'] .hanafuda-skill .skill-des::after,
+[frame-view="11"][frame-type='diamond'] .hanafuda-skill .skill-des::after,
+[frame-view="12"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '光 | 五光 15 | 四光 10 | 三光 6'; color: gold; }
+[frame-view="3"][frame-type='diamond'] .hanafuda-skill .skill-des::after {content: '光 | 五光 15 | 四光 10 | 三光 6 | 花见酒 3';}
+[frame-view="8"][frame-type='diamond'] .hanafuda-skill .skill-des::after {content: '光 | 五光 15 | 四光 10 | 三光 6 | 月见酒 3';}
+[frame-view="11"][frame-type='diamond'] .hanafuda-skill .skill-des::after  {content: '光 | 五光 15 | 雨四光 8';}
+
+[frame-view="2"][frame-type='diamond'] .hanafuda-skill .skill-des::after,
+[frame-view="4"][frame-type='diamond'] .hanafuda-skill .skill-des::after,
+[frame-view="5"][frame-type='diamond'] .hanafuda-skill .skill-des::after,
+[frame-view="6"][frame-type='diamond'] .hanafuda-skill .skill-des::after,
+[frame-view="7"][frame-type='diamond'] .hanafuda-skill .skill-des::after,
+[frame-view="8"][frame-type='club'] .hanafuda-skill .skill-des::after,
+[frame-view="9"][frame-type='diamond'] .hanafuda-skill .skill-des::after,
+[frame-view="10"][frame-type='diamond'] .hanafuda-skill .skill-des::after,
+[frame-view="11"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '种'; color: #3c3; }
+[frame-view="6"][frame-type='diamond'] .hanafuda-skill .skill-des::after,
+[frame-view="7"][frame-type='diamond'] .hanafuda-skill .skill-des::after,
+[frame-view="10"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '种 | 猪鹿蝶 5'; }
+[frame-view="9"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '种 | 花见酒 3 | 月见酒 3'; }
+
+[frame-view="1"][frame-type='club'] .hanafuda-skill .skill-des::after,
+[frame-view="2"][frame-type='club'] .hanafuda-skill .skill-des::after,
+[frame-view="3"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '赤 | 赤短 6'; color: #c33; }
+
+[frame-view="6"][frame-type='club'] .hanafuda-skill .skill-des::after,
+[frame-view="9"][frame-type='club'] .hanafuda-skill .skill-des::after,
+[frame-view="10"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '青 | 青短 6'; color: violet; }
+
+[frame-view="4"][frame-type='club'] .hanafuda-skill .skill-des::after,
+[frame-view="5"][frame-type='club'] .hanafuda-skill .skill-des::after,
+[frame-view="7"][frame-type='club'] .hanafuda-skill .skill-des::after,
+[frame-view="11"][frame-type='heart'] .hanafuda-skill .skill-des::after { content: '短'; color: #988e71; }
+
+
+
+/*[frame-view="1"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「光」松上鹤'; color: gold; }
 [frame-view="1"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「赤」松上赤短'; color: #c33; }
 [frame-view="1"][frame-type='heart'] .hanafuda-skill .skill-des::after,
 [frame-view="1"][frame-type='spade'] .hanafuda-skill .skill-des::after { content: '「粕」松'; }
@@ -771,12 +999,12 @@ body {
 [frame-view="3"][frame-type='spade'] .hanafuda-skill .skill-des::after { content: '「粕」樱'; }
 
 [frame-view="4"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「种」藤上鹃'; color: #3c3; }
-[frame-view="4"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「短」藤上短册'; color: ; }
+[frame-view="4"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「短」藤上短册'; color: #f60; }
 [frame-view="4"][frame-type='heart'] .hanafuda-skill .skill-des::after,
 [frame-view="4"][frame-type='spade'] .hanafuda-skill .skill-des::after { content: '「粕」藤'; }
 
 [frame-view="5"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「种」蒲上八桥'; color: #3c3; }
-[frame-view="5"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「短」蒲上短册'; color: ; }
+[frame-view="5"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「短」蒲上短册'; color: #f60; }
 [frame-view="5"][frame-type='heart'] .hanafuda-skill .skill-des::after,
 [frame-view="5"][frame-type='spade'] .hanafuda-skill .skill-des::after { content: '「粕」菖蒲'; }
 
@@ -786,7 +1014,7 @@ body {
 [frame-view="6"][frame-type='spade'] .hanafuda-skill .skill-des::after { content: '「粕」牡丹'; }
 
 [frame-view="7"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「种」萩间猪'; color: #3c3; }
-[frame-view="7"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「短」萩上短册'; color: ; }
+[frame-view="7"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「短」萩上短册'; color: #f60; }
 [frame-view="7"][frame-type='heart'] .hanafuda-skill .skill-des::after,
 [frame-view="7"][frame-type='spade'] .hanafuda-skill .skill-des::after { content: '「粕」萩'; }
 
@@ -795,7 +1023,7 @@ body {
 [frame-view="8"][frame-type='heart'] .hanafuda-skill .skill-des::after,
 [frame-view="8"][frame-type='spade'] .hanafuda-skill .skill-des::after { content: '「粕」芒草'; }
 
-[frame-view="9"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「种」「粕」菊上杯'; color: #3c3; }
+[frame-view="9"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「种」菊上杯'; color: #3c3; }
 [frame-view="9"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「青」菊上青短'; color: violet;  }
 [frame-view="9"][frame-type='heart'] .hanafuda-skill .skill-des::after,
 [frame-view="9"][frame-type='spade'] .hanafuda-skill .skill-des::after { content: '「粕」菊'; }
@@ -807,13 +1035,13 @@ body {
 
 [frame-view="11"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「光」柳上风'; color: gold; }
 [frame-view="11"][frame-type='club'] .hanafuda-skill .skill-des::after { content: '「种」柳上燕'; color: #3c3; }
-[frame-view="11"][frame-type='heart'] .hanafuda-skill .skill-des::after { content: '「短」柳上短册'; color: ; }
+[frame-view="11"][frame-type='heart'] .hanafuda-skill .skill-des::after { content: '「短」柳上短册'; color: #f60; }
 [frame-view="11"][frame-type='spade'] .hanafuda-skill .skill-des::after { content: '「粕」柳雷雨鼓'; }
 
 [frame-view="12"][frame-type='diamond'] .hanafuda-skill .skill-des::after { content: '「光」桐上凰'; color: gold; }
 [frame-view="12"][frame-type='club'] .hanafuda-skill .skill-des::after,
 [frame-view="12"][frame-type='heart'] .hanafuda-skill .skill-des::after,
-[frame-view="12"][frame-type='spade'] .hanafuda-skill .skill-des::after { content: '「粕」泡桐'; }
+[frame-view="12"][frame-type='spade'] .hanafuda-skill .skill-des::after { content: '「粕」泡桐'; }*/
 
 .num {z-index: 2;}
 .bg .num-0,
