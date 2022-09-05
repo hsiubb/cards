@@ -84,21 +84,26 @@ body {
 	bottom: 20px;
 	width: calc(var(--quatW) / 8);
 	height: calc(var(--quatW) / 8);
+	color: #fff;
 }
 [frame-type='diamond'] .mark::after {
-	border-radius: 50%;
-	background: radial-gradient(transparent, #fff, transparent);
+	content: 'A';
+	/* border-radius: 50%;
+	background: radial-gradient(transparent, #fff, transparent); */
 }
 [frame-type='club'] .mark::after {
-	background: linear-gradient(to right bottom, #fff, transparent, #fff);
+	content: 'B';
+	/* background: linear-gradient(to right bottom, #fff, transparent, #fff);
 	border-radius: 0 50%;
-	transform: scale(.75, 1) rotate(-45deg);
+	transform: scale(.75, 1) rotate(-45deg); */
 }
 [frame-type='heart'] .mark::after {
-	background: linear-gradient(to top, transparent, #049, #fff 75%, transparent 80%, #fff 85%, transparent 90%, #fff 95%, transparent);
+	content: 'C';
+	/* background: linear-gradient(to top, transparent, #049, #fff 75%, transparent 80%, #fff 85%, transparent 90%, #fff 95%, transparent); */
 }
-[frame-type='spade'] .mark {
-	background: #fff;
+[frame-type='spade'] .mark::after {
+	content: 'D';
+	/* background: #fff; */
 }
 /*[frame-type='spade'] .mark::after {
 	content: '';
@@ -653,7 +658,7 @@ body {
 	vertical-align: middle;
 }
 .skill .skill-des {
-	font-size: 24px;
+	font-size: 28px;
 	line-height: 1.5;
 	text-align: left;
 	/*color: rgba(255, 255, 255, .4);*/
@@ -672,39 +677,37 @@ body {
 	top: 0;
 	vertical-align: middle;
 }
-.skill:nth-of-type(2)::before {
-	top: 1.5em;
-}
-.skill:nth-of-type(4)::before {
-	top: 3em;
-}
-/*.skill:nth-of-type(5)::before {
-	top: 4.5em;
-}*/
+.skill:nth-of-type(2)::before,
 .skill.criminal-skill::before {
 	top: 1.5em;
+}
+.skill:nth-of-type(3)::before ,
+.skill.graffiti-skill::before {
+	top: 3em;
+}
+.skill.criminal-skill::before {
 	color: var(--crimColor);
 }
+.skill.graffiti-skill::before {
+	color: var(--crimColor);
+}
+
 .skill .skill-des {
 	bottom: 0;
 }
-.skill:nth-of-type(2) .skill-des {
-	bottom: 1.5em;
-}
-.skill:nth-of-type(4) .skill-des {
-	bottom: 3em;
-}
-.skill:nth-of-type(5) .skill-des {
-	bottom: 4.5em;
-}
+.skill:nth-of-type(2) .skill-des,
 .skill.criminal-skill .skill-des {
 	bottom: 1.5em;
+}
+.skill:nth-of-type(3) .skill-des,
+.skill.graffiti-skill .skill-des {
+	bottom: 3em;
 }
 
 
 .skill-des::before {
 	display: inline-block;
-	width: 60px;
+	width: 61px;
 	padding-right: 5px;
 	text-align: right;
 	vertical-align: middle;
@@ -738,21 +741,21 @@ body {
 [frame-view="10"] .cabo-skill .skill-des::before,
 [frame-view="11"] .cabo-skill .skill-des::before,
 [frame-view="12"] .cabo-skill .skill-des::before {
-	content: 'cabo';
+	content: 'CABO';
 	color: var(--caboColor);
-	transform: scale(.8, 1) translate(5%, 0);
+	transform: scale(.6, 1) translate(-20%, 0);
 }
 [frame-view="7"] .cabo-skill .skill-des::after,
 [frame-view="8"] .cabo-skill .skill-des::after {
-	content: '查看自己一张牌';
+	content: '查看自己 1 张牌';
 }
 [frame-view="9"] .cabo-skill .skill-des::after,
 [frame-view="10"] .cabo-skill .skill-des::after {
-	content: '查看对手一张牌';
+	content: '查看对手 1 张牌';
 }
 [frame-view="11"] .cabo-skill .skill-des::after,
 [frame-view="12"] .cabo-skill .skill-des::after {
-	content: '与对手交换一张牌';
+	content: '与对手交换 1 张牌';
 }
 
 
@@ -824,7 +827,7 @@ body {
 }
 [frame-view="4"][frame-type='diamond'] .loveletter-skill .skill-des::after,
 [frame-view="4"][frame-type='club'] .loveletter-skill .skill-des::after {
-	content: '一回合内不受技能效果影响';
+	content: '1 回合内不受技能效果影响';
 }
 [frame-view="3"][frame-type='diamond'] .loveletter-skill .skill-des::after,
 [frame-view="3"][frame-type='club'] .loveletter-skill .skill-des::after {
@@ -841,7 +844,7 @@ body {
 }
 [frame-view="0"][frame-type='diamond'] .loveletter-skill .skill-des::after,
 [frame-view="0"][frame-type='club'] .loveletter-skill .skill-des::after {
-	content: '若本轮你存活且只有你打出/弃掉间谍，额外获得一分';
+	content: '若你存活且只有你打出/弃掉间谍，+1 分';
 }
 /*
 侍卫 1 5 出牌时猜任一位玩家的手牌，如果猜中则出局，其中不能猜测对方为侍卫
@@ -963,7 +966,7 @@ body {
 
 /* 花札 役牌 */
 .hanafuda-skill .skill-des::after {
-	content: '粕';
+	content: '「粕」';
 	margin-left: -.3em;
 }
 
@@ -1063,10 +1066,10 @@ body {
 	content: '拿到此牌的为起始玩家，立刻打出此牌，开始游戏';
 }
 [frame-view="9"][frame-type='heart'] .criminal-skill .skill-des::after {
-	content: '在回合内将犯人作为最后的牌打出则获胜，提前打出则失败';
+	content: '将犯人作为最后的牌打出则获胜，否则失败';
 }
 [frame-view="9"][frame-type='spade'] .criminal-skill .skill-des::after {
-	content: '选择一个玩家弃掉一张牌并获得此牌';
+	content: '选择一位玩家弃掉 1 张牌并获得此牌';
 }
 [frame-view="8"][frame-type='heart'] .criminal-skill .skill-des::after,
 [frame-view="8"][frame-type='spade'] .criminal-skill .skill-des::after {
@@ -1082,14 +1085,14 @@ body {
 [frame-view="4"][frame-type='heart'] .criminal-skill .skill-des::after,
 [frame-view="3"][frame-type='heart'] .criminal-skill .skill-des::after,
 [frame-view="2"][frame-type='heart'] .criminal-skill .skill-des::after {
-	content: '同时持有犯人和这张牌牌被侦探询问时，可声称不是犯人';
+	content: '持有这张牌牌被侦探询问时，可声称不是犯人';
 }
 [frame-view="6"][frame-type='spade'] .criminal-skill .skill-des::after,
 [frame-view="5"][frame-type='spade'] .criminal-skill .skill-des::after,
 [frame-view="4"][frame-type='spade'] .criminal-skill .skill-des::after,
 [frame-view="3"][frame-type='spade'] .criminal-skill .skill-des::after,
 [frame-view="2"][frame-type='spade'] .criminal-skill .skill-des::after {
-	content: '所有玩家同时抽 Ta 右手边的玩家一张牌';
+	content: '所有玩家同时抽 Ta 右手边的玩家 1 张牌';
 }
 
 [frame-view="11"][frame-type='heart'] .criminal-skill .skill-des::after,
@@ -1100,19 +1103,19 @@ body {
 [frame-view="10"][frame-type='club'] .criminal-skill .skill-des::after,
 [frame-view="10"][frame-type='heart'] .criminal-skill .skill-des::after,
 [frame-view="10"][frame-type='spade'] .criminal-skill .skill-des::after {
-	content: '选择一位玩家交换一张手牌';
+	content: '选择一位玩家交换 1 张手牌';
 }
 [frame-view="12"][frame-type='diamond'] .criminal-skill .skill-des::after,
 [frame-view="12"][frame-type='club'] .criminal-skill .skill-des::after,
 [frame-view="12"][frame-type='heart'] .criminal-skill .skill-des::after,
 [frame-view="12"][frame-type='spade'] .criminal-skill .skill-des::after {
-	content: '所有玩家各自选择一张牌，传给 Ta 左手边的玩家';
+	content: '所有玩家各自选择 1 张牌，传给 Ta 左手边的玩家';
 }
 [frame-view="13"][frame-type='diamond'] .criminal-skill .skill-des::after,
 [frame-view="13"][frame-type='club'] .criminal-skill .skill-des::after,
 [frame-view="13"][frame-type='heart'] .criminal-skill .skill-des::after,
 [frame-view="13"][frame-type='spade'] .criminal-skill .skill-des::after {
-	content: '选择一位玩家，若Ta手中有犯人，则你获胜，否则弃置本牌（本牌不可在第一回合打出）';
+	content: '选择一位玩家，若Ta手中有犯人，则你获胜，否则弃置本牌（本牌不可在首回合打出）';
 }
 /*
 第一发现者 -- 9
@@ -1157,7 +1160,7 @@ body {
 	content: '用自己的 1 张手牌交换其他玩家的 1 张场牌';
 }
 [frame-view="3"] .graffiti-skill .skill-des::after {
-	content: '选择玩家，指定数字，目标玩家用指定数字牌与你交换手牌';
+	content: '指定数字，选择一位玩家用指定的牌与你交换';
 }
 [frame-view="2"] .graffiti-skill .skill-des::after {
 	content: '选择一位玩家，查看 Ta 所有手牌';
@@ -1204,8 +1207,8 @@ body {
 
 .num,
 .extra,
+.bg .num,
 [frame-view="extra"] .skill,
-[frame-view="bg"] .num,
 [frame-view="bg"] .skill,
 [frame-view="bg"]::before,
 [frame-view="bg"]::after {

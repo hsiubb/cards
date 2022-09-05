@@ -183,13 +183,13 @@
 				<div class="skill loveletter-skill">
 					<div class="skill-des"></div>
 				</div>
+				<div class="skill cabo-skill">
+					<div class="skill-des"></div>
+				</div>
 				<div class="skill criminal-skill">
 					<div class="skill-des"></div>
 				</div>
 				<div class="skill graffiti-skill">
-					<div class="skill-des"></div>
-				</div>
-				<div class="skill cabo-skill">
 					<div class="skill-des"></div>
 				</div>
 			</div>
@@ -257,7 +257,7 @@
 
 	<script>
 		let cur = 'all';
-		let type = 3;
+		let type = 'bg';
 		let frame = document.querySelector('[frame-view]');
 		let status = frame.getAttribute('frame-view');
 
@@ -274,16 +274,51 @@
 					type = (type + 1) % 4;
 				} else {
 					switch(cur) {
+						case 12:
+							switch(type) {
+								case 3:
+									cur = 'bg';
+									type = 0;
+									break;
+								case 2:
+									cur = 1;
+									type += 1;
+									break;
+								default:
+									cur += 1;
+							}
+							break;
 						case 13:
-						case 'all':
-							cur = 'bg';
+							cur = type;
 							type = (type + 1) % 4;
+							break;
+						case 'all':
+							type = 0;
+							cur = 'bg';
 							break;
 						case 'bg':
 							cur = 0;
 							break;
 						default:
-							cur = (cur + 1) % 14;
+							// cur = (cur + 1) % 14;
+							// switch(cur) {
+							// 	case 13:
+							// 		cur = 0;
+							// 		break;
+							// 	case 12:
+							// 		break;
+							// 	default:;
+							// }
+
+							// switch(type) {
+							// 	case 3:
+							// 	case 2:
+							// 		cur = 0;
+							// 		break;
+							// 	default:
+							// 	cur = (cur + 1) % 14;
+							// }
+							cur += 1;
 					}
 				}
 
