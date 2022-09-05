@@ -61,7 +61,7 @@ body {
 	overflow: hidden;
 }
 .container::before {
-	content: '';
+	/*content: '';*/
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -82,27 +82,133 @@ body {
 	position: absolute;
 	right: 20px;
 	bottom: 20px;
+	width: calc(var(--quatW) / 4);
+	height: calc(var(--quatW) / 4);
+	color: #fff;
+	/* background: radial-gradient(#fff, rgba(255, 255, 255, .3)); */
+}
+
+.mark::before,
+.mark::after {
+	position: absolute;
+	display: block;
+	width: calc(var(--quatW) / 4);
+	height: calc(var(--quatW) / 4);
+	/* background: radial-gradient(#fff, rgba(255, 255, 255, .25)); */
+	background: #fff;
+}
+[frame-type='diamond'] .mark::before {
+	content: '';
+	transform: scale(.5, 1) rotate(45deg);
+}
+[frame-type='club'] .mark::before {
+	content: '';
+	top: 2px;
+	left: 33.5%;
+	width: calc(var(--quatW) / 12);
+	height: calc(var(--quatW) / 12);
+	box-shadow: -9px 15px #fff,  9px 15px #fff;
+	border-radius: 50%;
+}
+[frame-type='club'] .mark::after,
+[frame-type='spade']::after {
+	content: '';
+	bottom: 3px;
+	width: 0;
+	left: calc(50% - 6px);
+	background: transparent;
+	border-bottom: 9px solid #fff;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+}
+[frame-type='heart'] .mark::before,
+[frame-type='heart'] .mark::after,
+[frame-type='spade'] .mark::before,
+[frame-type='spade'] .mark::after {
+	content: '';
+	top: 17.5%;
+	width: calc(var(--quatW) / 9);
+	height: calc(var(--quatW) / 6);
+	border-radius: 50px 50px 10px 3px;
+	transform: translate(45%) rotate(-45deg)
+}
+[frame-type='heart'] .mark::after,
+[frame-type='spade'] .mark::after {
+	right: 0;
+	border-radius: 50px 50px 3px 10px;
+	transform: translate(-45%) rotate(45deg);
+}
+[frame-type='spade'] .mark {
+	transform: rotate(180deg)
+}
+[frame-type='spade'] .mark::before,
+[frame-type='spade'] .mark::after {
+	top: 20%;
+}
+[frame-type='spade'] .mark::after {
+	right: 0;
+	border-radius: 50px 50px 3px 10px;
+	transform: translate(-45%) rotate(45deg);
+}
+[frame-type='spade']::after {
+	position: absolute;
+	bottom: 25px;
+	left: auto;
+	right: calc(var(--quatW) / 4 - 7px);
+	border-bottom: 6px solid #fff;
+}
+
+/* .mark::before,
+.mark::after {
+	content: '';
+	position: absolute;
+	display: block;
 	width: calc(var(--quatW) / 8);
 	height: calc(var(--quatW) / 8);
-	color: #fff;
+	background: radial-gradient(#fff, rgba(255, 255, 255, .25));
+}
+[frame-type='diamond'] .mark::before {
+	width: calc(var(--quatW) / 8);
+	border-radius: 50%;
 }
 [frame-type='diamond'] .mark::after {
-	content: 'A';
-	/* border-radius: 50%;
-	background: radial-gradient(transparent, #fff, transparent); */
+	display: none;
+}
+[frame-type='club'] .mark::before,
+[frame-type='club'] .mark::after {
+	width: calc(var(--quatW) / 16);
+	height: calc(var(--quatW) / 16);
+	border-radius: 0 100% 0 0;
+	background: linear-gradient(45deg, rgba(255, 255, 255, .25), #fff, #fff);
+}
+[frame-type='heart'] .mark::before {
+	right: 0;
+}
+[frame-type='spade'] .mark::after {
+	bottom: 0;
+	left: 0;
+	transform: rotate(180deg);
+} */
+/* [frame-type='club'] .mark::before {
+	right: 0;
+	top: 0;
+	width: calc(var(--quatW) / 16);
+	height: calc(var(--quatW) / 16);
+	border-radius: 0 100% 0 0;
+	background: linear-gradient(-135deg, #fff, #fff, transparent);
 }
 [frame-type='club'] .mark::after {
-	content: 'B';
-	/* background: linear-gradient(to right bottom, #fff, transparent, #fff);
-	border-radius: 0 50%;
-	transform: scale(.75, 1) rotate(-45deg); */
-}
+	bottom: 0;
+	left: 0;
+	border-radius: 0 0 0 100%;
+	background: linear-gradient(45deg, #fff, #fff, transparent);
+} */
 [frame-type='heart'] .mark::after {
-	content: 'C';
+	/* content: 'C'; */
 	/* background: linear-gradient(to top, transparent, #049, #fff 75%, transparent 80%, #fff 85%, transparent 90%, #fff 95%, transparent); */
 }
 [frame-type='spade'] .mark::after {
-	content: 'D';
+	/* content: 'D'; */
 	/* background: #fff; */
 }
 /*[frame-type='spade'] .mark::after {
