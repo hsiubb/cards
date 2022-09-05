@@ -10,7 +10,7 @@
 <body>
 	<div class="container">
 		<!-- <div class="frame" style="position:absolute;right:72px;bottom:72px;" frame-type="diamond" frame-view=""></div> -->
-		<div class="frame" frame-type="spade" frame-view="">
+		<div class="frame" frame-type="diamond" frame-view="all">
 			<div class="num num-0">
 				<div class="line line-0-1 circle"></div>
 			</div>
@@ -155,35 +155,43 @@
 				</div>
 			</div>
 
-			<div class="cabo">
-				<h1 class="title">Cabo</h1>
+			<div class="extra">
+				<!-- <h1 class="title">Cabo</h1> -->
 				<dl>
-					<dt>积分制</dt>
-					<dd>每轮结束时，将自己场上剩余牌的数字加总，作为自己当轮的得分，将得分加上自己之前轮次的分数作为 <span>总分</span></dd>
+					<dt class="cabo">CABO</dt>
+					<dd>移除 <span>13H</span> <span>13H</span></dd>
 
-					<dt>Cabo</dt>
-					<dd>喊 <span>Cabo</span> 且当轮数字和 <span>最小</span> 的玩家，本轮 <span>+0</span> 分</dd>
+					<dt class="love">情书</dt>
+					<dd>[ <span>7 8 9 11</span> ] * 1, [ <span>0 2 3 4 5 6</span> ] * 2, [<span>1</span>] * 4</dd>
 
-					<dt>13 13 12 12</dt>
-					<dd>所有对手 <span>+50</span> 分，你 <span>+0</span> 分</dd>
+					<dt class="hana">花札</dt>
+					<dd>移除 [ <span>0 13</span> ] * 2</dd>
 
-					<dt>恰好 100 分</dt>
-					<dd>-50 分（每局游戏限 <span>1</span> 次）</dd>
+					<dt class="crim">犯人在跳舞</dt>
+					<dd>移除 [<span class="love">情书</span>]</dd>
 
-					<dt>游戏结束</dt>
-					<dd>当有玩家总分 <span>超过 100 分</span> 时，游戏结束，<span>总分最少</span> 的玩家成为赢家</dd>
+					<dt class="graf">涂鸦六号</dt>
+					<dd>[ <span>1 2 3 4 5 6</span> ] * 4</dd>
 
 				</dl>
 			</div>
 
-			<div class="skill hanafuda-skill">
-				<div class="skill-des"></div>
-			</div>
-			<div class="skill loveletter-skill">
-				<div class="skill-des"></div>
-			</div>
-			<div class="skill cabo-skill">
-				<div class="skill-des"></div>
+			<div class="skills">
+				<div class="skill hanafuda-skill">
+					<div class="skill-des"></div>
+				</div>
+				<div class="skill loveletter-skill">
+					<div class="skill-des"></div>
+				</div>
+				<div class="skill criminal-skill">
+					<div class="skill-des"></div>
+				</div>
+				<div class="skill graffiti-skill">
+					<div class="skill-des"></div>
+				</div>
+				<div class="skill cabo-skill">
+					<div class="skill-des"></div>
+				</div>
 			</div>
 
 			<div class="mark"></div>
